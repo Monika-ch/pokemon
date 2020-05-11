@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Pokecard from "./Pokecard";
 import "./Pokedex.css";
+import { Link } from "react-router-dom";
 
 class Pokedex extends Component {
 
@@ -17,12 +18,14 @@ class Pokedex extends Component {
         <h4>Total Experience: {this.props.exp}</h4>
         <div className="Pokedex-cards">
           {this.props.pokemon.map((p) => (
+            <Link to={`/pokemon/${p.id}`}>
             <Pokecard
               id={p.id}
               name={p.name}
               type={p.type}
               exp={p.base_experience}
             />
+            </Link>
           ))}
         </div>
       </div>
