@@ -1,20 +1,27 @@
 import React, { Component } from "react";
 import Pokecard from "./Pokecard";
-import "./Pokedex.css";
+import "./css/Pokedex.css";
 import { Link } from "react-router-dom";
 
 class Pokedex extends Component {
 
   render() {
     let title;
-    if(this.props.isWinner) {
-      title = <h1 className="Pokedex-winner">Winning Hand</h1>
+    // if(this.props.isWinner) {
+    //   title = <h1 className="Pokedex-winner">Winning Hand</h1>
+    // } else {
+    //   title = <h1 className="Pokedex-loser">Losing Hand</h1>;
+    // }
+    let playerName;
+    if(this.props.isComputer) {
+      playerName = <h1 className="Pokedex-winner">Computer</h1>
     } else {
-      title = <h1 className="Pokedex-loser">Losing Hand</h1>;
+      playerName = <h1 className="Pokedex-loser">You</h1>;
     }
     return (
       <div className="Pokedex">
         {title}
+        {playerName}
         <h4>Total Experience: {this.props.exp}</h4>
         <div className="Pokedex-cards">
           {this.props.pokemon.map((p) => (

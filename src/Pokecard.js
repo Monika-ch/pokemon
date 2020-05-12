@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Pokecard.css"
+import "./css/Pokecard.css"
 
 // const POKE_API =
 //   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";

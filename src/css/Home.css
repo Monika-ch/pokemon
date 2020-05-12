@@ -1,0 +1,80 @@
+body {
+    background: #fffc00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+}
+/* .centerItems h1, h3{
+    justify-content: center;
+
+} */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 50px;
+    font-size: 84px;
+    font-weight: bold;
+    color: rgb(15, 37, 109);
+    text-shadow: -1px -1px 0 rgb(255, 0, 0), 1px -1px 0 rgb(255, 196, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    transition: all ease 500ms;
+}
+
+header h3{
+    font-size: 22px;
+    letter-spacing: .5px;
+}
+
+.battleCard {
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    margin: 50px 25%;
+    text-align: center;
+    height: 500px;
+    letter-spacing: 1px;
+    box-shadow: 10px 10px 30px 10px rgba(255, 0, 0, 0.36);
+    /* box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56); */
+
+    text-align: center;
+    border-radius: 15px;
+}
+
+.battleCard h5 {
+    margin-top: 45px;
+    padding-bottom: 35px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid #CAC531;
+    box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    text-shadow: -1px -1px 0 rgb(231, 247, 7), 1px -1px 0 rgb(243, 4, 4), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
+
+}
+
+Button {
+    box-shadow: -17px 10px 12px -7px rgba(63, 27, 27, 0.56);
+    border-radius: 10px!important;
+    letter-spacing: .5px!important;
+}
+
+Button:hover {
+    transform: scale(1.1);
+    color: yellow!important;
+    opacity: 0.9;
+    transition: all ease 500ms;
+}
+
+.game-rules {
+    color: white!important;
+    border: 1px solid white!important;
+}
