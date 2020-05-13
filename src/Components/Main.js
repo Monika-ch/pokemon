@@ -6,6 +6,8 @@ import PokemonCache from "../PokemonCache";
 
 class Main extends Component {
   static defaultProps = {
+    // COMMENT: Remove the comment from the  line just below this before testing
+
     // mainPokemonData: [
     //   { id: 4, name: "Charmander", type: "fire", base_experience: 62 },
     //   { id: 7, name: "Squirtle", type: "water", base_experience: 63 },
@@ -32,6 +34,8 @@ class Main extends Component {
     //   { id: 94, name: "Gengar", type: "poison", base_experience: 225 },
     //   { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
     // ],
+
+    // COMMENT: Remove the line just below this before testing
     mainPokemonData: PokemonCache.cache,
   };
 
