@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Pokecard from '../Pokecard'
+import Pokecard from './Pokecard'
 
 export default class DiscardCard extends Component {
     render() {
