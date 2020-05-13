@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Pokecard from "./Pokecard";
+import TypeList from "./Components/TypeList";
 import "./css/Pokedex.css";
-import { Link } from "react-router-dom";
 
 class Pokedex extends Component {
 
@@ -19,23 +19,34 @@ class Pokedex extends Component {
       playerName = <h1 className="Pokedex-loser">You</h1>;
     }
     return (
-      <div className="Pokedex">
-        {title}
-        {playerName}
-        <h4>Total Experience: {this.props.exp}</h4>
-        <div className="Pokedex-cards">
-          {this.props.pokemon.map((p) => (
-            <Link to={`/pokemon/${p.id}`}>
-            <Pokecard
-              id={p.id}
-              name={p.name}
-              type={p.type}
-              exp={p.base_experience}
-            />
-            </Link>
-          ))}
+      <React.Fragment>
+        <div className="wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col-2">
+              <TypeList pokemon={this.props.pokemon}/>
+            </div>
+            <div className="col-10">
+              <div className="Pokedex">
+                {title}
+                {playerName}
+                <h4>Total Experience: {this.props.exp}</h4>
+                <div className="Pokedex-cards">
+                  {this.props.pokemon.map((p) => (
+                    <Pokecard
+                      id={p.id}
+                      name={p.name}
+                      type={p.type}
+                      exp={p.base_experience}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

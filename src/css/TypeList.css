@@ -1,0 +1,27 @@
+.TypeList {
+    width: 200px;
+    padding: 10px;
+    margin: 1rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    background-color: white;
+    border-radius: 3px;
+  }
+
+  .TypeList-data {
+    margin-left: 10px;
+    font-size: 80%;
+  }
+
+  .TypeList-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .TypeList div:hover {
+    transform: scale(1.2);
+    color: red;
+    transition: all ease 500ms;
+  }
+  
