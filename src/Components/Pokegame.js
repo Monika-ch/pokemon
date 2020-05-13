@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Pokedex from "./Pokedex";
+import DiscardCard from "./DiscardCard"
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -40,7 +41,11 @@ class Pokegame extends Component {
             isComputer
             isWinner={exp1 > exp2}
           />
+          <DiscardCard id="1" type="grass" name="bulbasaur" base_experience="100"/>
           <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
+          <div className='Pokecard'>
+            <img src="/pokeball.png" width="50"/>
+          </div>
         </div>
         {/* </div> */}
       </React.Fragment>
