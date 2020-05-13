@@ -5,15 +5,20 @@ import "../css/TypeList.css"
 class TypeList extends Component {
     render() {
         const typeWithCount = this.props.pokemon.map(x => x.type).reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
-        
+        console.log(JSON.stringify(this.props),this.props.isComputer);
+        let playerName = "YOU";
+        if (this.props.isComputer){
+            playerName = "COMPUTER"
+        }
+
         return (
-            <div className="TypeList">
-                <h5 className="TypeList-title">You have . .</h5>
+            <div>
+                <h5 className="TypeList-title">{playerName}</h5>
                 <ul>
                     {Array.from(typeWithCount).map(([type, count]) => (
                         <div className="TypeList-data">
-                            <span>{count} : </span>
-                            <span>{type} type</span>
+                            <span className="count">{count}  </span>
+                            <span className="type">{type} type</span>
                         </div>
                     ))}
                 </ul>

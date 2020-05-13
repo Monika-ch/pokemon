@@ -1,5 +1,6 @@
 .Pokedex {
   text-align: center;
+  margin: 0;
 }
 
 .Pokedex-cards {
@@ -16,6 +17,11 @@
   color: #e91e63;
 }
 
-/* .TypeList {
-  text-align: center;
-} */
+.wrapper {
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+}
+
+
+

@@ -12,6 +12,7 @@
 
 .Pokecard-data {
   font-size: 80%;
+  text-transform: capitalize;
 }
 
 .Pokecard-title {
@@ -31,7 +32,7 @@
 }
 
 .Pokecard img:hover {
-  transform: scale(1.25);
-  opacity: 0.7;
+  transform: scale(1.2);
+  opacity: 0.8;
   transition: all ease 500ms;
 }

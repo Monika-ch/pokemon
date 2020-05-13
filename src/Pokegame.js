@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Pokedex from "./Pokedex";
 import Pokesearch from './Pokesearch'
+import DiscardCard from "./Components/DiscardCard";
 
 class Pokegame extends Component {
 	render() {
@@ -19,7 +20,13 @@ class Pokegame extends Component {
 				{/* <div className="bg"> */}
 					<div>
 						<Pokedex pokemon={hand1} exp={exp1} isComputer isWinner={exp1 > exp2} />
+						<DiscardCard />
 						<Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
+						<div className="Pokecard">
+						<div>
+							<img src="/pokeball.png" height="50" width="50" alt="Pokeball" />                        </div>
+						</div>
+						<h5 className="CardDeck-title">Pick One Card</h5>
 					</div>
 				{/* </div> */}
 			</React.Fragment>
