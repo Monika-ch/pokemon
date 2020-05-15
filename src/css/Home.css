@@ -65,6 +65,7 @@ Button {
     box-shadow: -17px 10px 12px -7px rgba(63, 27, 27, 0.56);
     border-radius: 10px!important;
     letter-spacing: .5px!important;
+    font-weight: bold!important;
 }
 
 Button:hover {
@@ -72,6 +73,7 @@ Button:hover {
     color: yellow!important;
     opacity: 0.9;
     transition: all ease 500ms;
+    border: 1px solid white!important;
 }
 
 .game-rules {

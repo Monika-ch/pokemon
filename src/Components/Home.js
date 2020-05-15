@@ -36,29 +36,31 @@ class Home extends Component {
         <div className="battleCard">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-12">
+              <div className="col-10">
                 <h5>Choose Your Battle</h5>
               </div>
-              <Link to="/pokemon" className="mt-3 col-7">
-                <Button color="danger" className="mt-3 p-3 col-10" onClick="">
+              <div className="col-12">
+              <Link to="/pokemon" className="mt-3">
+                <Button outline color="danger" className="mt-4 p-3 col-7">
                   vs Computer
                 </Button>
               </Link>
-              <Link to="/friendgame" className="col-7">
-                <Button color="success" className="mt-4 p-3 col-10">
+              <Link to="/friendgame">
+                <Button outline color="success" className="mt-4 p-3 col-7">
                   vs A Friend
                 </Button>
               </Link>
-              <Link to="/randomgame" className="col-7">
-                <Button color="info" className="mt-4 p-3 col-10">
+              <Link to="/randomgame">
+                <Button outline color="info" className="mt-4 p-3 col-7">
                   vs Random Opponent
                 </Button>
               </Link>
-              <Link to="/game_rules" className="mt-2 col-7">
-                <Button outline className="mt-3 col-8 game-rules">
+              <Link to="/game_rules" className="mt-2">
+                <Button outline className="mt-4 col-7 game-rules">
                   Game Rules
                 </Button>
               </Link>
+              </div>
             </div>
           </div>
         </div>
