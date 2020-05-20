@@ -1,0 +1,78 @@
+/* .bg {
+    background: #FDC830;
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);
+    background: linear-gradient(to right, #F37335, #FDC830);
+} */
+
+.card-coming-soon {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 500px;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    text-align: center;
+    border-radius: 5px;
+    margin: 12%;
+}
+
+.card-coming-soon h4 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: blue;
+    border-radius: 5px;
+}
+
+.card-coming-soon .col-md-6 {
+    justify-content: center;
+    align-items: center;
+    height: 310px;
+    background: #00c3ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffff1c, #ffff1c, #00c3ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffff1c, #ffff1c, #00c3ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: rgb(80, 56, 32);
+    box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.card-coming-soon .col-md-6 h6,
+p {
+    padding: 0 20px 5px 20px;
+}
+
+
+.card-coming-soon .col-md-6:hover {
+    transform: scale(1.25);
+    transition: all ease 500ms;
+}
+
+.button {
+    position: fixed;
+    top: 15%;
+    left: 10%;
+    height: 100px;
+    border-radius: 25% !important;
+}
+
+.button:hover {
+    transform: scale(1.25);
+    opacity: 0.7;
+    transition: all ease 500ms;
+}
+
+.fa-home {
+    font-size: 80px;
+}
