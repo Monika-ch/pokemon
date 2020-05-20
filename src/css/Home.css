@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Piedra&family=Special+Elite&display=swap');
+
 body {
-    background: #fffc00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: #fffc00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #fffc00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #fffc00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
 }
+
 /* .centerItems h1, h3{
     justify-content: center;
 
@@ -28,55 +34,74 @@ header h1:hover {
     transition: all ease 500ms;
 }
 
-header h3{
-    font-size: 22px;
+header h3 {
+    font-size: 2em;
+    font-weight: 600;
     letter-spacing: .5px;
+    font-family: 'Amatic SC', cursive;
+
 }
 
 .battleCard {
-    background: #000428;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    margin: 50px 25%;
-    text-align: center;
-    height: 500px;
-    letter-spacing: 1px;
-    box-shadow: 10px 10px 30px 10px rgba(255, 0, 0, 0.36);
-    /* box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56); */
+    background: #000428;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    margin: 80px auto;
+    height: 450px;
+    max-width: 600px;
+    letter-spacing: 1px;
+    box-shadow: 10px -20px 30px 20px rgba(7, 7, 7, 0.8);
+    /* box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56); */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 15px;
+    border: 5px ridge #004e92;
 }
 
 .battleCard h5 {
     margin-top: 45px;
-    padding-bottom: 35px;
-    font-size: 24px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 26px;
     font-weight: bold;
-    color: white;
-    border-bottom: 1px solid #CAC531;
+    font-family: 'Piedra', cursive;
+    letter-spacing: 2px;
+
+    color: rgb(255, 166, 0);
+    border-bottom: 5px ridge rgb(255, 166, 0);
+    border-radius: 4px;
     box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
-    text-shadow: -1px -1px 0 rgb(231, 247, 7), 1px -1px 0 rgb(243, 4, 4), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
+    text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
+
+    /* text-shadow: -1px -1px 0 rgb(231, 247, 7), 1px -1px 0 rgb(243, 4, 4), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000; */
 
 }
 
 Button {
     box-shadow: -17px 10px 12px -7px rgba(63, 27, 27, 0.56);
-    border-radius: 10px!important;
-    letter-spacing: .5px!important;
-    font-weight: bold!important;
+    border-radius: 10px !important;
+    letter-spacing: .8px !important;
+    /* font-weight: bold !important; */
+    font-family: 'Special Elite',
+        cursive !important;
+    /* padding: 15px !important; */
 }
 
 Button:hover {
     transform: scale(1.1);
-    color: yellow!important;
+    color: white !important;
     opacity: 0.9;
     transition: all ease 500ms;
-    border: 1px solid white!important;
+    border: 1px solid white !important;
 }
 
 .game-rules {
-    color: white!important;
-    border: 1px solid white!important;
+    color: white !important;
+    border: 1px solid white !important;
 }
