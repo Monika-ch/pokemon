@@ -11,7 +11,7 @@ class App extends Component {
     // Adding baseName so that the website works with github.icon
     // see here:https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={baseUrl}>
         <div className="App">
           <Routes />
         </div>
