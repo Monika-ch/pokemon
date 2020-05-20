@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.30d8a93a.chunk.css",
-    "main.js": "/static/js/main.1c6719a3.chunk.js",
-    "main.js.map": "/static/js/main.1c6719a3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8f90365b.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8f90365b.js.map",
-    "static/css/2.f7bf1f6b.chunk.css": "/static/css/2.f7bf1f6b.chunk.css",
-    "static/js/2.6cb354dc.chunk.js": "/static/js/2.6cb354dc.chunk.js",
-    "static/js/2.6cb354dc.chunk.js.map": "/static/js/2.6cb354dc.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.5726a0cc775fc77cec5368c6aa78af6b.js": "/precache-manifest.5726a0cc775fc77cec5368c6aa78af6b.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.f7bf1f6b.chunk.css.map": "/static/css/2.f7bf1f6b.chunk.css.map",
-    "static/css/main.30d8a93a.chunk.css.map": "/static/css/main.30d8a93a.chunk.css.map",
-    "static/js/2.6cb354dc.chunk.js.LICENSE.txt": "/static/js/2.6cb354dc.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff"
+    "main.css": "/pokemon/static/css/main.30d8a93a.chunk.css",
+    "main.js": "/pokemon/static/js/main.ee657cfd.chunk.js",
+    "main.js.map": "/pokemon/static/js/main.ee657cfd.chunk.js.map",
+    "runtime-main.js": "/pokemon/static/js/runtime-main.2bfe477e.js",
+    "runtime-main.js.map": "/pokemon/static/js/runtime-main.2bfe477e.js.map",
+    "static/css/2.041fc6bb.chunk.css": "/pokemon/static/css/2.041fc6bb.chunk.css",
+    "static/js/2.6cb354dc.chunk.js": "/pokemon/static/js/2.6cb354dc.chunk.js",
+    "static/js/2.6cb354dc.chunk.js.map": "/pokemon/static/js/2.6cb354dc.chunk.js.map",
+    "index.html": "/pokemon/index.html",
+    "precache-manifest.a59eb230185acb526d7278dd177fa4be.js": "/pokemon/precache-manifest.a59eb230185acb526d7278dd177fa4be.js",
+    "service-worker.js": "/pokemon/service-worker.js",
+    "static/css/2.041fc6bb.chunk.css.map": "/pokemon/static/css/2.041fc6bb.chunk.css.map",
+    "static/css/main.30d8a93a.chunk.css.map": "/pokemon/static/css/main.30d8a93a.chunk.css.map",
+    "static/js/2.6cb354dc.chunk.js.LICENSE.txt": "/pokemon/static/js/2.6cb354dc.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/pokemon/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.8f90365b.js",
-    "static/css/2.f7bf1f6b.chunk.css",
+    "static/js/runtime-main.2bfe477e.js",
+    "static/css/2.041fc6bb.chunk.css",
     "static/js/2.6cb354dc.chunk.js",
     "static/css/main.30d8a93a.chunk.css",
-    "static/js/main.1c6719a3.chunk.js"
+    "static/js/main.ee657cfd.chunk.js"
   ]
 }
