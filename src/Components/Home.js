@@ -14,14 +14,14 @@ class Home extends Component {
                 <h1>
                   P
                   <img
-                    src="/pokeball.png"
+                    src="pokeball.png"
                     height="50"
                     width="50"
                     alt="Pokeball"
                   />
                   kem
                   <img
-                    src="/pokeball.png"
+                    src="pokeball.png"
                     height="50"
                     width="50"
                     alt="Pokeball"

@@ -155,7 +155,7 @@ class Pokegame extends Component {
             isWinner={exp2 > exp1}
           />
           <div className="Pokecard" onClick={onDeckClicked}>
-            <img src="/pokeball.png" width="50" />
+            <img src="pokeball.png" width="50" />
           </div>
         </div>
         {/* </div> */}
