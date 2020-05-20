@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from "./Route";
 import PokemonCache from "./PokemonCache";
 class App extends Component {
+  // COMMENT: Remove the line just below this before testing
   static pokemonCache = new PokemonCache();
   render() {
     return (
