@@ -13,9 +13,9 @@ class Pokedex extends Component {
     // }
     let playerName;
     if (this.props.isComputer) {
-      playerName = <h1 className="Pokedex-winner">COMPUTER</h1>;
+      playerName = <h1 className="Pokedex-computer">COMPUTER</h1>;
     } else {
-      playerName = <h1 className="Pokedex-loser">YOU</h1>;
+      playerName = <h1 className="Pokedex-human">YOU</h1>;
     }
 
     return (

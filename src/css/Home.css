@@ -19,9 +19,7 @@ header h1 {
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
   color: rgb(15, 37, 109);
-
-  text-shadow: -2px -1px 0 rgb(255, 0, 0), 2px -1px 0 rgb(255, 196, 0),
-    -2px 1px 0 rgb(0, 0, 0), 2px 1px 0 #000;
+  text-shadow: -2px -1px 0 rgb(255, 0, 0), 2px -1px 0 rgb(255, 196, 0), -2px 1px 0 rgb(0, 0, 0), 2px 1px 0 #000;
 }
 
 header h1:hover {
@@ -49,7 +47,6 @@ header h3 {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #004e92, #000428);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   margin: 80px auto;
   height: 450px;
   max-width: 600px;
@@ -72,14 +69,11 @@ header h3 {
   font-weight: bold;
   font-family: "Piedra", cursive;
   letter-spacing: 2px;
-
   color: rgb(255, 166, 0);
   border-bottom: 5px ridge rgb(255, 166, 0);
   border-radius: 4px;
   box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
-  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
-    -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
   /* text-shadow: -1px -1px 0 rgb(231, 247, 7), 1px -1px 0 rgb(243, 4, 4), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000; */
 }
 
@@ -87,9 +81,7 @@ Button {
   box-shadow: -17px 10px 12px -7px rgba(63, 27, 27, 0.56);
   border-radius: 10px !important;
   letter-spacing: 0.8px !important;
-  /* font-weight: bold !important; */
   font-family: "Special Elite", cursive !important;
-  /* padding: 15px !important; */
 }
 
 Button:hover {

@@ -70,10 +70,10 @@ class Pokegame extends Component {
 
   checkWinner() {
     if (this.isAWinningHand(this.state.hand1)) {
-      alert("Computer won");
+      alert("Computer won ! Try your luck in next BATTLE !");
     }
     if (this.isAWinningHand(this.state.hand2)) {
-      alert("Human won");
+      alert("Congratulations ! You WON !");
     }
   }
   render() {
@@ -134,7 +134,7 @@ class Pokegame extends Component {
     return (
       <React.Fragment>
         {/* <div className="bg"> */}
-        <div>
+        <div className="game-wrapper">
           <Pokedex
             pokemon={hand1}
             exp={exp1}

@@ -1,6 +1,4 @@
-body {
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Orbitron:wght@900&family=Piedra&family=Special+Elite&display=swap");
 
 .Pokedex {
   text-align: center;
@@ -13,16 +11,32 @@ body {
   flex-wrap: wrap;
 }
 
-.Pokedex-winner {
+.Pokedex-computer {
   color: #4caf50;
+  font-family: "Special Elite",
+    cursive;
+
+
 }
 
-.Pokedex-loser {
+.Pokedex-human {
   color: #e91e63;
+  font-family: "Special Elite",
+    cursive;
+
+
 }
 
 .wrapper {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.game-wrapper {
+  height: 100vh;
+  /* width: 100vw; */
+  background: #FDC830;
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);
+  background: linear-gradient(to right, #F37335, #FDC830);
 }

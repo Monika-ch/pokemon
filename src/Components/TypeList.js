@@ -13,16 +13,18 @@ class TypeList extends Component {
       playerName = "COMPUTER";
     }
     return (
-      <div>
+      <div className="TypeList-wrapper">
         <h5 className="TypeList-title">{playerName}</h5>
-        <ul>
-          {typeWithCount.map(([type, count]) => (
-            <div className="TypeList-data">
-              <span className="count">{count} </span>
-              <span className="type">{type} type</span>
-            </div>
-          ))}
-        </ul>
+        <div className="TypeList-content">
+          <ul>
+            {typeWithCount.map(([type, count]) => (
+              <div className="TypeList-data">
+                <span className="count">{count} </span>
+                <span className="type">{type} type</span>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
