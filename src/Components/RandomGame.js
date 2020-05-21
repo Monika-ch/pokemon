@@ -14,7 +14,7 @@ function RandomGame(props) {
 
       <div className="container card-coming-soon">
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-md-6 col-8">
             <h4>
               COMING S
               <img src="pokeball.png" height="30" width="30" alt="Pokeball" />
