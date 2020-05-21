@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import { Link, Switch, Route } from "react-router-dom";
-import $ from "jquery";
+import { Link } from "react-router-dom";
 import CircleType from "circletype";
 import "../css/Home.css";
 
@@ -22,7 +21,7 @@ class Home extends Component {
                   P
                   <img
                     className="image"
-                    src="pokeball.png"
+                    src={process.env.PUBLIC_URL + "/pokeball.png"}
                     height="70"
                     width="70"
                     alt="Pokeball"
@@ -30,7 +29,7 @@ class Home extends Component {
                   kem
                   <img
                     className="image"
-                    src="pokeball.png"
+                    src={process.env.PUBLIC_URL + "/pokeball.png"}
                     height="70"
                     width="70"
                     alt="Pokeball"
