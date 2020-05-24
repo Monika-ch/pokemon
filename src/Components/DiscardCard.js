@@ -32,30 +32,18 @@ export default class DiscardCard extends Component {
   }
 
   render() {
-    let defaultImageUrl = `${POKE_API}${padToThree(this.props.id)}.png`;
-    let imgSrc = defaultImageUrl;
+    let imgSrc = `${POKE_API}${padToThree(this.props.id)}.png`;
     let width = 130;
     let hidePokemonDetails = false;
 
-    switch (this.props.usedAs) {
-      //   case "ComputerCardUage":
-      //     imgSrc = "black-pokeball.png";
-      //     width = 80;
-      //     hidePokemonDetails = true;
-      //     break;
-      case "DiscardedCardUsage":
-        if (this.props.id == -1) {
-          imgSrc = "transparent-pokemon-2.png";
-          width = 110;
-          hidePokemonDetails = true;
-        }
-        break;
-      default:
-        imgSrc = defaultImageUrl;
+    if (this.props.id == -1) {
+      imgSrc = "transparent-pokemon-2.png";
+      width = 110;
+      hidePokemonDetails = true;
     }
 
     return (
-      <div className="DiscardCard" onClick={() => {}}>
+      <div className="DiscardCard">
         <div className="DiscardCard-data" hidden={hidePokemonDetails}>
           Type: {this.props.type}
         </div>

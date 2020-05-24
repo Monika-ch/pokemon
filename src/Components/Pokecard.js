@@ -13,29 +13,18 @@ class Pokecard extends Component {
   }
 
   render() {
-    let hidePokemonDetails = false;
     let imgSrc = `${POKE_API}${padToThree(this.props.id)}.png`;
     let name = this.props.name;
     let type = this.props.type;
     let exp = this.props.exp;
     let width = 110;
 
-    switch (this.props.usedAs) {
-      case "ComputerCardUage":
-        hidePokemonDetails = "true";
-
-        imgSrc = "black-pokeball.png";
-        name = "Pokemon";
-        type = "??";
-        exp = "??";
-        width = 80;
-        break;
-      case "DiscardedCardUsage":
-        if (this.props.id == -1) {
-          hidePokemonDetails = true;
-          imgSrc = "pokeball.png";
-          width = 85;
-        }
+    if (this.props.usedAs === "ComputerCardUage") {
+      imgSrc = "black-pokeball.png";
+      name = "Pokemon";
+      type = "??";
+      exp = "??";
+      width = 80;
     }
 
     return (
