@@ -18,7 +18,7 @@ class Home extends Component {
             <div className="row">
               <div className="col">
                 <h1>
-                  P
+                  Ƥ
                   <img
                     className="image"
                     src={process.env.PUBLIC_URL + "/pokeball.png"}
@@ -26,7 +26,7 @@ class Home extends Component {
                     width="70"
                     alt="Pokeball"
                   />
-                  kem
+                  Ƙℯḿ
                   <img
                     className="image"
                     src={process.env.PUBLIC_URL + "/pokeball.png"}
@@ -34,7 +34,7 @@ class Home extends Component {
                     width="70"
                     alt="Pokeball"
                   />
-                  n
+                  ȵ
                 </h1>
                 <h3 className="arc">..let the battle begin</h3>
               </div>

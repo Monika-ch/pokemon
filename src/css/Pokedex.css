@@ -11,32 +11,20 @@
   flex-wrap: wrap;
 }
 
-.Pokedex-computer {
-  color: #4caf50;
-  font-family: "Special Elite",
-    cursive;
-
-
-}
-
-.Pokedex-human {
-  color: #e91e63;
-  font-family: "Special Elite",
-    cursive;
-
-
-}
-
 .wrapper {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .game-wrapper {
   height: 100vh;
-  /* width: 100vw; */
-  background: #FDC830;
-  background: -webkit-linear-gradient(to right, #F37335, #FDC830);
-  background: linear-gradient(to right, #F37335, #FDC830);
+  width: 100vw;
+  background: #CAC531;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F3F9A7, #CAC531);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F3F9A7, #CAC531);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -36,7 +36,14 @@ class Main extends Component {
     ],
 
     // COMMENT: Remove the line just below this before testing
-    //    mainPokemonData: PokemonCache.cache,
+    // mainPokemonData: PokemonCache.cache,
+  };
+  constructor(props) {
+    super(props);
+  }
+
+  changeColor = (color) => {
+    this.setState({ color: color });
   };
 
   render() {
@@ -45,12 +52,14 @@ class Main extends Component {
         (p) => p.id === +match.params.id
       )[0];
       return (
-        <Pokecard
-          id={match.params.id}
-          name={matchedPokemon.name}
-          type={matchedPokemon.type}
-          exp={matchedPokemon.base_experience}
-        />
+        <div id="main-div" style={{ background: this.props.color }}>
+          <Pokecard
+            id={match.params.id}
+            name={matchedPokemon.name}
+            type={matchedPokemon.type}
+            exp={matchedPokemon.base_experience}
+          />
+        </div>
       );
     };
 

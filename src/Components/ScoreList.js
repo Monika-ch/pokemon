@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../css/TypeList.css";
+import "../css/ScoreList.css";
 
-class TypeList extends Component {
+class ScoreList extends Component {
   render() {
     const typeWithCount = Array.from(
       this.props.pokemon
@@ -13,12 +13,17 @@ class TypeList extends Component {
       playerName = "COMPUTER";
     }
     return (
-      <div className="TypeList-wrapper">
-        <h5 className="TypeList-title">{playerName}</h5>
-        <div className="TypeList-content">
+      <div className="ScoreList-wrapper">
+        <h5 className="ScoreList-title">{playerName}</h5>
+        <div className="Score">
+          <h6>
+            SCORE : <span className="scoreCount">{this.props.exp}</span>
+          </h6>
+        </div>
+        <div className="ScoreList-content">
           <ul>
             {typeWithCount.map(([type, count]) => (
-              <div className="TypeList-data">
+              <div className="ScoreList-data">
                 <span className="count">{count} </span>
                 <span className="type">{type} type</span>
               </div>
@@ -30,4 +35,4 @@ class TypeList extends Component {
   }
 }
 
-export default TypeList;
+export default ScoreList;

@@ -9,7 +9,7 @@ import GameRules from "./Components/GameRules";
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/pokemon" component={Main} />
+      <Route path="/pokemon" render={() => <Main color="blue" />} />
       <Route path="/friendgame" component={FriendGame} />
       <Route path="/randomgame" component={RandomGame} />
       <Route path="/game_rules" component={GameRules} />

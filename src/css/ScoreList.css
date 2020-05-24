@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Annie+Use+Your+Telescope&family=Handlee&family=Orbitron:wght@900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Piedra&family=Special+Elite&display=swap');
+
+.ScoreList {
+    box-sizing: border-box;
+    width: 220px;
+    height: 320px;
+    margin: 0;
+    margin-top: 16px;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    background: #b00020;
+    /*linear-gradient(to right, #ff512f, #dd2476); #b00020; rgb(20, 41, 224)*/
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ScoreList-title {
+    font-family: "Piedra", cursive;
+    margin: 1rem 0;
+    color: white;
+    font-weight: 100;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.ScoreList-content {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 200px;
+    background-color: #cc0025;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    padding-top: 16px;
+    border: 1px ridge rgba(0, 0, 0, 0.1);
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+}
+
+.ScoreList-data {
+    font-family: 'Annie Use Your Telescope',
+        cursive;
+    /* font-size: 90%; */
+    font-weight: bold;
+    color: white;
+    /* color: rgb(245, 229, 229); */
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.ScoreList-data:hover {
+    transform: scale(1.2);
+    color: rgb(255, 216, 107);
+    transition: all ease 500ms;
+}
+
+ul {
+    margin-left: -12.5%;
+}
+
+.count {
+    color: rgb(246, 250, 7);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.Score {
+    color: white;
+    text-align: center;
+}
+
+.Score h6 {
+    font-weight: 600;
+    font-size: 90%;
+}
+
+.Score .scoreCount {
+    color: rgb(249, 253, 5);
+    font-family: "Special Elite", cursive;
+    font-size: 120%;
+}
+
+.center-me {
+    justify-content: center;
+}
+
+
+/* font-family: 'Amatic SC',
+cursive;
+font-family: 'Annie Use Your Telescope',
+cursive;
+font-family: 'Handlee',
+cursive;
+font-family: 'Orbitron',
+sans-serif;
+font-family: 'Philosopher',
+sans-serif;
+font-family: 'Piedra',
+cursive;
+font-family: 'Special Elite',
+cursive; */

@@ -3,19 +3,22 @@ class PokemonCache {
   triggerDownload(maxPokemons) {
     this.getPokemonData(maxPokemons);
   }
+
   async getPokemonData(maxPokemons) {
     if (PokemonCache.cache.length != 0) return this.cache;
-
+    let cntr = 0;
     const url = "https://pokeapi.co/api/v2/pokemon/";
-    for (let i = 0; i < maxPokemons; i++) {
-      await fetch(url + (i + 1).toString())
-        .then((result) => result.json())
-        .then((result) => {
-          PokemonCache.cache.push(this.convertModel(result));
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+    for (let i = 0; ; i++) {
+      try {
+        let result = await fetch(url + (i + 1).toString());
+        console.log(JSON.stringify(result));
+        let responseBody = await result.json();
+        console.log(JSON.stringify(responseBody));
+        let pokemonData = this.convertModel(responseBody);
+        PokemonCache.cache.push(this.convertModel(responseBody));
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     return this.cache;
