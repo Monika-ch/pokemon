@@ -135,7 +135,7 @@ class Pokegame extends Component {
   }
 
   // Winning by set = 3 sets of 3 card each
-  // Winning by exp == 1200 points
+  // Winning by exp == 1600 points
   isAWinningHand(hand) {
     // This is calculating how many pokemons of each type are there.-hero
     // For eg if the hand is ["fire", "fire", "something"] the countOfEachType array
@@ -145,7 +145,7 @@ class Pokegame extends Component {
     // Total 3 sets for each type
     const ifWinningBySet =
       countOfEachType.filter(([c, cnt]) => cnt > 2).length > 2;
-    const ifWinningByExp = this.getHandSum(hand) > 1200;
+    const ifWinningByExp = this.getHandSum(hand) > 1600;
     return ifWinningBySet || ifWinningByExp;
   }
 
@@ -240,7 +240,7 @@ class Pokegame extends Component {
           isModalOpen: true,
           modalTitle: "Game Rules",
           modalContent:
-            "Objective: Collect three sets (1 set = 3 cards) different types of pokemon or score > 1200.",
+            "Objective: Collect three sets (1 set = 3 cards) different types of pokemon or score > 1600.",
           modalButton1: "Cool",
           modalButton2: "Got it",
           onButtonClick1: this.dismissModal,
