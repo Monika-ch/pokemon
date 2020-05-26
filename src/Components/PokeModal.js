@@ -1,15 +1,5 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardImg,
-  CardBody,
-  CardText,
-  Modal,
-  ModalHeader,
-  ModalBody,
-} from "reactstrap";
+import { Card, CardBody, Modal, ModalHeader, ModalBody } from "reactstrap";
 import "../css/PokeModal.css";
 
 export default class PokeModal extends Component {

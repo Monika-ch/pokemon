@@ -135,7 +135,7 @@ class Pokegame extends Component {
   }
 
   // Winning by set = 3 sets of 3 card each
-  // Winning by exp == 1600 points
+  // Winning by exp == 2000 points
   isAWinningHand(hand) {
     // This is calculating how many pokemons of each type are there.-hero
     // For eg if the hand is ["fire", "fire", "something"] the countOfEachType array
@@ -145,7 +145,7 @@ class Pokegame extends Component {
     // Total 3 sets for each type
     const ifWinningBySet =
       countOfEachType.filter(([c, cnt]) => cnt > 2).length > 2;
-    const ifWinningByExp = this.getHandSum(hand) > 1600;
+    const ifWinningByExp = this.getHandSum(hand) > 2000;
     return ifWinningBySet || ifWinningByExp;
   }
 
@@ -155,7 +155,7 @@ class Pokegame extends Component {
     for (let i = 0; i < playerTypeCount.length; i++) {
       let [type, count] = playerTypeCount[i];
       if (count > 2) {
-        completedSets.push(...stateHand.filter((p) => p.type == type));
+        completedSets.push(...stateHand.filter((p) => p.type === type));
         this.setState({ [completedHandName]: completedSets });
       }
     }
@@ -203,7 +203,7 @@ class Pokegame extends Component {
   swapDiscardCard = (id, isComputer = false) => {
     console.log("swap discard card..............", id, isComputer);
     let selectedCard = this.state.discardedCard;
-    if (isComputer == false) {
+    if (isComputer === false) {
       this.setState({ selectedCard: selectedCard });
       console.log("SELECTED POKEMON : ", selectedCard.name);
     }
@@ -234,13 +234,13 @@ class Pokegame extends Component {
 
   showRules = (e) => {
     console.log(e.key);
-    if (e.key == "r") {
+    if (e.key === "r") {
       this.setState({
         modalState: {
           isModalOpen: true,
           modalTitle: "Game Rules",
           modalContent:
-            "Objective: Collect three sets (1 set = 3 cards) different types of pokemon or score > 1600.",
+            "Objective : Collect three sets (1 set = 3 cards) different types of pokemon or score > 2000.",
           modalButton1: "Cool",
           modalButton2: "Got it",
           onButtonClick1: this.dismissModal,
@@ -272,7 +272,7 @@ class Pokegame extends Component {
             modalState: {
               ...cantAddCardorMakeMove,
               modalContent:
-                "Can't make a move. Should have picked a pokemon with higher exp from handss",
+                "Can't make a move ! Should have picked a pokemon with a higher EXP !",
               onButtonClick1: this.dismissModal,
               onButtonClick2: this.dismissModal,
             },
@@ -296,12 +296,12 @@ class Pokegame extends Component {
 
     const makeComputerMove = () => {
       let shouldPickFromDeck =
-        Math.random() > 0.5 || this.state.computerHand.length == 1;
+        Math.random() > 0.5 || this.state.computerHand.length === 1;
       let filteredCards = this.filterCompletedSet(
         this.state.computerHand,
         this.state.completedCardComputer
       );
-      if (filteredCards.length == maxHandsPossible || !shouldPickFromDeck) {
+      if (filteredCards.length === maxHandsPossible || !shouldPickFromDeck) {
         let randomIdxToDiscard =
           Math.floor(Math.random() * 100) % this.state.computerHand.length;
         discardCardAndSetState(
@@ -312,7 +312,7 @@ class Pokegame extends Component {
         return;
       }
 
-      if (this.state.computerHand.length == 1 || shouldPickFromDeck) {
+      if (this.state.computerHand.length === 1 || shouldPickFromDeck) {
         let newHand = this.getCardFromDeck(computerHand);
         this.setState({ computerHand: newHand }, () =>
           this.checkWinner(this.state.playerHand, this.state.computerHand)
@@ -329,7 +329,7 @@ class Pokegame extends Component {
         this.setState({
           modalState: {
             ...cantAddCardorMakeMove,
-            modalContent: "Cant add more cards to hand. discard few cards",
+            modalContent: "Can't add more cards ! Discard few cards !",
             onButtonClick1: this.dismissModal,
             onButtonClick2: this.dismissModal,
           },
