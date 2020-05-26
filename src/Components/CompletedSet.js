@@ -4,7 +4,6 @@ import "../css/CompletedSet.css";
 
 export default class CompletedSet extends Component {
   render() {
-    console.log("In completedSet the card passed are;", this.props.pokemon);
     return (
       <div className="Pokedex-cards">
         {this.props.pokemon

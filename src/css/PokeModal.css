@@ -79,6 +79,9 @@
   color: rgb(5, 9, 252) !important;
 }
 
+#main-div {
+  background-color: red;
+}
 
 /* font-family: 'Amatic SC',
 cursive;

@@ -8,7 +8,7 @@ class PokemonCache {
     if (PokemonCache.cache.length != 0) return this.cache;
     let cntr = 0;
     const url = "https://pokeapi.co/api/v2/pokemon/";
-    for (let i = 0; ; i++) {
+    for (let i = 0; i < maxPokemons; i++) {
       try {
         let result = await fetch(url + (i + 1).toString());
         console.log(JSON.stringify(result));

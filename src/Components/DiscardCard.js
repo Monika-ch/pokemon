@@ -43,7 +43,10 @@ export default class DiscardCard extends Component {
     }
 
     return (
-      <div className="DiscardCard">
+      <div
+        className="DiscardCard"
+        onClick={() => this.props.onClick(this.props.id)}
+      >
         <div className="DiscardCard-data" hidden={hidePokemonDetails}>
           Type: {this.props.type}
         </div>

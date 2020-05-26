@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import CircleType from "circletype";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "../css/Home.css";
 
 class Home extends Component {
@@ -10,9 +11,11 @@ class Home extends Component {
     let circleType = new CircleType(document.getElementsByClassName("arc")[0]);
     circleType.dir(-1).radius(350);
   }
+
   render() {
     return (
       <div>
+        <div />
         <header>
           <div className="container">
             <div className="row">

@@ -4,13 +4,6 @@
     background: linear-gradient(to right, #F37335, #FDC830);
 } */
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .card-coming-soon {
   height: 500px;
   letter-spacing: 1px;
