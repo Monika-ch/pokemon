@@ -20,7 +20,7 @@ class Pokecard extends Component {
     let width = 110;
 
     if (this.props.usedAs === "ComputerCardUage") {
-      imgSrc = "black-pokeball.png";
+      imgSrc = "ultraball.png";
       name = "Pokemon";
       type = "??";
       exp = "??";

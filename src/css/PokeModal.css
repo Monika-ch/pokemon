@@ -1,0 +1,96 @@
+.modal {
+  padding-top: 12%;
+  font-family: 'Special Elite',
+    cursive;
+}
+
+/* 
+.modal-dialog {
+  background-color: black;
+} */
+
+.modal-content {
+  border-radius: 100px !important;
+  box-shadow: -25px 25px 12px -5px#0e4242f3;
+
+
+}
+
+.modal-header {
+  background-color: rgb(195, 255, 0);
+  border-radius: 100px;
+  box-shadow: -25px 25px 12px -5px#0e4242c4;
+
+
+}
+
+/* .modal-body {
+  background-color: rgb(22, 34, 206);
+} */
+
+.modal h1 {
+  font-family: 'Amatic SC',
+    cursive;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+.modal h2 {
+  text-align: center;
+  font-size: 36px;
+  padding: 30px 50px;
+  margin-bottom: -15px;
+  color: #003eb0;
+  /* background-color: aliceblue; */
+
+}
+
+.card {
+  background-color: rgb(240, 254, 255) !important;
+
+}
+
+.btn-group {
+  justify-content: center;
+}
+
+.button1 {
+  margin: 0 25px;
+  padding: 10px 25px;
+  color: rgb(2, 0, 124);
+  background-color: rgb(203, 233, 104);
+  border: none;
+}
+
+.button1:hover {
+  color: rgb(242, 1, 250) !important;
+}
+
+.button2 {
+  margin: 0 25px;
+  padding: 10px 40px;
+  color: rgb(2, 0, 124);
+  background-color: rgb(122, 228, 157);
+  border: none;
+}
+
+.button2:hover {
+  color: rgb(5, 9, 252) !important;
+}
+
+
+/* font-family: 'Amatic SC',
+cursive;
+font-family: 'Annie Use Your Telescope',
+cursive;
+font-family: 'Handlee',
+cursive;
+font-family: 'Orbitron',
+sans-serif;
+font-family: 'Philosopher',
+sans-serif;
+font-family: 'Piedra',
+cursive;
+font-family: 'Special Elite',
+cursive; */

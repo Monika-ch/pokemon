@@ -3,6 +3,8 @@ import Pokedex from "./Pokedex";
 import DiscardCard from "./DiscardCard";
 import CompletedSet from "./CompletedSet";
 import CardDeck from "./CardDeck";
+import PokeModal from "./PokeModal";
+import { Link, Redirect } from "react-router-dom";
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -34,6 +36,52 @@ function getTypeCount(hand) {
 }
 
 const maxHandsPossible = 7;
+
+const cantAddCardorMakeMove = {
+  isModalOpen: true,
+  modalTitle: "INVALID MOVE !",
+  modalContent: "",
+  modalButton1: "Cool",
+  modalButton2: "Got it",
+};
+
+const computerWonModal = {
+  isModalOpen: true,
+  modalTitle: "Game over !!",
+  modalContent: "Computer Won! Better luck next time",
+  modalButton1: "New game",
+  modalButton2: "Home",
+};
+
+const humanWonModal = {
+  isModalOpen: true,
+  modalTitle: "Game Over !!",
+  modalContent: "Congratulations .. You WON !",
+  modalButton1: "New game",
+  modalButton2: "Home",
+};
+
+const defaultState = {
+  discardedCard: { id: -1, name: "", type: "", exp: "" },
+  computerHand: [],
+  playerHand: [],
+  completedCardPlayer: [],
+  completedCardComputer: [],
+  isRedirect: false,
+  modalState: {
+    isModalOpen: false,
+    modalTitle: "",
+    modalContent: "",
+    modalButton1: "",
+    modalButton2: "",
+    onButtonClick1: null,
+    onButtonClick2: null,
+  },
+  // for modal texting uncomment the below modalState and comment the above one!
+
+  // modalState: humanWonModal,
+};
+
 class Pokegame extends Component {
   getNRandomPokemon(n) {
     return getRandom(this.props.pokemon, n);
@@ -41,6 +89,12 @@ class Pokegame extends Component {
 
   constructor(props) {
     super(props);
+    this.resetState(true);
+
+    console.log("State in constructor:", JSON.stringify(this.state));
+  }
+
+  resetState = (initialize = false) => {
     let computerHand = [];
     let playerHand = [...this.getNRandomPokemon(maxHandsPossible * 2)];
     while (computerHand.length < playerHand.length) {
@@ -48,16 +102,22 @@ class Pokegame extends Component {
       let randPokemon = playerHand.splice(randIdx, 1)[0];
       computerHand.push(randPokemon);
     }
-    this.state = {
-      discardedCard: { id: -1, name: "", type: "", exp: "" },
-      computerHand: computerHand,
-      playerHand: playerHand,
-      completedCardPlayer: [],
-      completedCardComputer: [],
-    };
-
-    console.log("State in constructor:", JSON.stringify(this.state));
-  }
+    // for first time this.state = is necessary.
+    // its like using a variable for first time, let x is necessary.
+    // after that we can keep doing x=10, x=100 etc.
+    // same way first time we need to assign something to state.After that we can keep doing setState
+    if (initialize) {
+      this.state = defaultState;
+      this.state.computerHand = computerHand;
+      this.state.playerHand = playerHand;
+    } else {
+      this.setState(defaultState);
+      this.setState(
+        { playerHand: playerHand, computerHand: computerHand },
+        () => this.checkWinner(this.state.playerHand, this.state.computerHand)
+      );
+    }
+  };
 
   makeMove(hand, id) {
     let idx = hand.findIndex((card) => card.id === id);
@@ -79,11 +139,11 @@ class Pokegame extends Component {
     let countOfEachType = getTypeCount(hand);
     // .some will check if any element from countOfEachType is greater than 2.
     const ifWinning = countOfEachType.some(([c, cnt]) => cnt > 2);
-    console.log("Checked if is any winningg");
+    console.log("Checked if is any winning", hand);
     return ifWinning;
   }
 
-  setCompletedState = (stateHand, handName) => {
+  setCompletedState = (stateHand, completedHandName, handName) => {
     let playerTypeCount = getTypeCount(stateHand);
     console.log(stateHand);
     console.log(playerTypeCount);
@@ -94,21 +154,65 @@ class Pokegame extends Component {
       if (count > 1) {
         console.log("Found completed set of type ", type);
         completedSets.push(...stateHand.filter((p) => p.type == type));
+        this.setState({ [completedHandName]: completedSets });
       }
     }
-    this.setState({ [handName]: completedSets });
+
+    // [1,2,3,4,5,6] => stateHand
+    // [3,5,6] => completedSet
+    // stateHand = [1,2,4]
+    // let newHand = stateHand.filter(
+    //   (x) => completedSets.findIndex((y) => y.id == x.id) == -1
+    // );
+
+    // if (newHand.length != stateHand.length) {
+    //   this.setState({ [handName]: newHand });
+    // }
   };
 
-  checkWinner() {
-    this.setCompletedState(this.state.playerHand, "completedCardPlayer");
-    this.setCompletedState(this.state.computerHand, "completedCardComputer");
-    if (this.isAWinningHand(this.state.computerHand)) {
-      alert("Computer won ! Try your luck in next BATTLE !");
+  checkWinner = (playerHand, computerHand) => {
+    this.setCompletedState(playerHand, "completedCardPlayer", "playerHand");
+    this.setCompletedState(
+      computerHand,
+      "completedCardComputer",
+      "computerHand"
+    );
+    if (this.isAWinningHand(computerHand)) {
+      this.setState({
+        modalState: {
+          ...computerWonModal,
+          onButtonClick1: this.onNewGame,
+          onButtonClick2: this.toHome,
+        },
+      });
     }
-    if (this.isAWinningHand(this.state.playerHand)) {
-      alert("Congratulations ! You WON !");
+    if (this.isAWinningHand(playerHand)) {
+      this.setState({
+        modalState: {
+          ...humanWonModal,
+          onButtonClick1: this.onNewGame,
+          onButtonClick2: this.toHome,
+        },
+      });
     }
-  }
+  };
+
+  dismissModal = () => {
+    this.setState({
+      modalState: { ...cantAddCardorMakeMove, isModalOpen: false },
+    });
+  };
+
+  toHome = () => {
+    console.log("home link....................");
+    this.setState({ isRedirect: true });
+  };
+
+  onNewGame = () => {
+    console.log("onNewGame");
+    this.resetState();
+  };
+
   render() {
     let computerHand = this.state.computerHand;
     let playerHand = this.state.playerHand;
@@ -124,20 +228,29 @@ class Pokegame extends Component {
     const onclick = (id) => {
       // if only 1 card remaining dont do anything
       if (this.state.playerHand.length == 1) {
-        alert("Can't make a move. Pick something from deck");
+        this.setState({
+          modalState: {
+            ...cantAddCardorMakeMove,
+            modalContent: "Can't make a move. Pick something from deck",
+            onButtonClick1: this.dismissModal,
+            onButtonClick2: this.dismissModal,
+          },
+        });
+
         return;
       }
 
       // Hand2 is always human so we will only search in humans hand
       discardCardAndSetState("playerHand", this.state.playerHand, id);
       makeComputerMove();
-      this.checkWinner();
     };
 
     const discardCardAndSetState = (handName, hand, id) => {
       let [discardedCard, newHand2] = this.makeMove(hand, id);
       this.setState({ discardedCard: discardedCard });
-      this.setState({ [handName]: newHand2 });
+      this.setState({ [handName]: newHand2 }, () =>
+        this.checkWinner(this.state.playerHand, this.state.computerHand)
+      );
     };
 
     const makeComputerMove = () => {
@@ -159,24 +272,45 @@ class Pokegame extends Component {
 
       if (this.state.computerHand.length == 1 || shouldPickFromDeck) {
         let newHand = this.getCardFromDeck(computerHand);
-        this.setState({ computerHand: newHand });
+        this.setState({ computerHand: newHand }, () =>
+          this.checkWinner(this.state.playerHand, this.state.computerHand)
+        );
       }
     };
     const onDeckClick = () => {
       if (this.state.playerHand.length >= maxHandsPossible) {
-        alert("Cant add more cards to hand. discard few cards");
+        this.setState({
+          modalState: {
+            ...cantAddCardorMakeMove,
+            modalContent: "Cant add more cards to hand. discard few cards",
+            onButtonClick1: this.dismissModal,
+            onButtonClick2: this.dismissModal,
+          },
+        });
         return;
       }
       let newHand = this.getCardFromDeck(playerHand);
-      this.setState({ playerHand: newHand });
+      this.setState({ playerHand: newHand }, () =>
+        this.checkWinner(this.state.playerHand, this.state.computerHand)
+      );
       makeComputerMove();
-      this.checkWinner();
     };
 
     return (
       <React.Fragment>
         {/* <div className="bg"> */}
         <div className="game-wrapper">
+          <PokeModal
+            isModalOpen={this.state.modalState.isModalOpen}
+            modalTitle={this.state.modalState.modalTitle}
+            modalContent={this.state.modalState.modalContent}
+            modalButton1={this.state.modalState.modalButton1}
+            onClickButton1={this.state.modalState.onButtonClick1}
+            modalButton2={this.state.modalState.modalButton2}
+            onClickButton2={this.state.modalState.onButtonClick2}
+
+            // onClick={this.onHome}
+          />
           <Pokedex
             pokemon={playerHand}
             onClick={onclick}
@@ -209,6 +343,10 @@ class Pokegame extends Component {
             onClick={() => {}}
           />
         </div>
+        {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
+        Redirect needs to be part of render function. It doesn't matter where it is put in html as we are moving away from this page
+        Also read tutorial on conditional rendering: https://reactjs.org/docs/conditional-rendering.html*/}
+        {this.state.isRedirect && <Redirect to="/" />}
         {/* </div> */}
       </React.Fragment>
     );
