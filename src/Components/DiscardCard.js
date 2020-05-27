@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Pokecard from "./Pokecard";
 import "../css/DiscardCard.css";
 
 // export default class DiscardCard extends Component {
@@ -27,16 +26,12 @@ const POKE_API = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
 
 export default class DiscardCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let imgSrc = `${POKE_API}${padToThree(this.props.id)}.png`;
     let width = 130;
     let hidePokemonDetails = false;
 
-    if (this.props.id == -1) {
+    if (this.props.id === -1) {
       imgSrc = "transparent-pokemon-2.png";
       width = 110;
       hidePokemonDetails = true;

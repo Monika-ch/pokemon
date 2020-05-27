@@ -67,8 +67,8 @@ const defaultState = {
   discardedCard: { id: -1, name: "", type: "", exp: "" },
   computerHand: [],
   playerHand: [],
-  completedCardPlayer: [],
-  completedCardComputer: [],
+  completedSetPlayer: [],
+  completedSetComputer: [],
   isRedirect: false,
   selectedCard: null,
   modalState: {
@@ -113,6 +113,8 @@ class Pokegame extends Component {
       this.state = defaultState;
       this.state.computerHand = computerHand;
       this.state.playerHand = playerHand;
+      this.setCompletedState(playerHand, "completedSetPlayer");
+      this.setCompletedState(computerHand, "completedSetComputer");
     } else {
       this.setState(defaultState);
       this.setState(
@@ -162,8 +164,8 @@ class Pokegame extends Component {
   };
 
   checkWinner = (playerHand, computerHand) => {
-    this.setCompletedState(playerHand, "completedCardPlayer");
-    this.setCompletedState(computerHand, "completedCardComputer");
+    this.setCompletedState(playerHand, "completedSetPlayer");
+    this.setCompletedState(computerHand, "completedSetComputer");
     if (this.isAWinningHand(computerHand)) {
       this.setState({
         modalState: {
@@ -299,7 +301,7 @@ class Pokegame extends Component {
         Math.random() > 0.5 || this.state.computerHand.length === 1;
       let filteredCards = this.filterCompletedSet(
         this.state.computerHand,
-        this.state.completedCardComputer
+        this.state.completedSetComputer
       );
       if (filteredCards.length === maxHandsPossible || !shouldPickFromDeck) {
         let randomIdxToDiscard =
@@ -323,7 +325,7 @@ class Pokegame extends Component {
       this.setState({ selectedCard: null });
       let filteredHand = this.filterCompletedSet(
         this.state.playerHand,
-        this.state.completedCardPlayer
+        this.state.completedSetPlayer
       );
       if (filteredHand.length >= maxHandsPossible) {
         this.setState({
@@ -368,7 +370,7 @@ class Pokegame extends Component {
             <Pokedex
               pokemon={this.filterCompletedSet(
                 this.state.playerHand,
-                this.state.completedCardPlayer
+                this.state.completedSetPlayer
               )}
               onClick={onclick}
               exp={exp2}
@@ -377,7 +379,7 @@ class Pokegame extends Component {
           </div>
         </div>
         <CompletedSet
-          pokemon={this.state.completedCardPlayer}
+          pokemon={this.state.completedSetPlayer}
           // usedAs="DiscardedCardUsage"
         />
         <div className="row center-me">
@@ -391,7 +393,7 @@ class Pokegame extends Component {
           <CardDeck onDeckClick={onDeckClick} />
         </div>
         <CompletedSet
-          pokemon={this.state.completedCardComputer}
+          pokemon={this.state.completedSetComputer}
           // usedAs="DiscardedCardUsage"
         />
         <div className="row">
@@ -407,7 +409,7 @@ class Pokegame extends Component {
             <Pokedex
               pokemon={this.filterCompletedSet(
                 this.state.computerHand,
-                this.state.completedCardComputer
+                this.state.completedSetComputer
               )}
               exp={exp1}
               isComputer
