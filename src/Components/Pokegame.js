@@ -452,7 +452,7 @@ class Pokegame extends Component {
 
               <div className="scorelist-wrapper">
                 <div className="container">
-                  <div className="mb-4 center-me">
+                  <div className="mb-4 center-me d-flex">
                     <div className="ScoreList row m-auto">
                       <ScoreList
                         isComputer={false}
