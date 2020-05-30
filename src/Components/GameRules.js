@@ -13,12 +13,15 @@ function FriendGame(props) {
           </Button>
         </Link>
         <div className="row justify-content-center">
-          <div className="col-md-6">
-            <h5 className="card-title">GAME RULES</h5>
+          <div className="col-8">
+            <h4 className="card-title">GAME RULES . .</h4>
             <h6 className="card-text">
               Excited to know the rules of POKE-BATTLE ?
             </h6>
-            <p>No worries ! You will soon get the updates !!</p>
+            <p>
+              No worries ! You will soon get the updates, the work is still in
+              progress !!
+            </p>
           </div>
         </div>
       </div>
