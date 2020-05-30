@@ -11,9 +11,10 @@ import LoadingOverlay from "react-loading-overlay";
 
 // CONSTANTS DEFINED HERE
 const timeForComputerMove = 1500;
-const pointsToWinGame = 2000;
-const completedSetCountToWinGame = 5;
+const pointsToWinGame = 1600;
+const completedSetCountToWinGame = 3;
 const cardCoundNeededToCompleteSet = 3;
+const maxCardInDeck = 7;
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -43,8 +44,6 @@ function getTypeCount(hand) {
   );
   return countOfEachType;
 }
-
-const maxHandsPossible = 7;
 
 const cantAddCardorMakeMove = {
   isModalOpen: true,
@@ -112,7 +111,7 @@ class Pokegame extends Component {
     // then we pick a random index between 0 and length of player hand
     // and move that card to computer hand. We keep doing this till
     // player hand and computer hand are equal
-    let playerHand = [...this.getNRandomPokemon(maxHandsPossible * 2)];
+    let playerHand = [...this.getNRandomPokemon(maxCardInDeck * 2)];
     while (computerHand.length < playerHand.length) {
       let randIdx = Math.floor(Math.random() * playerHand.length);
       let randPokemon = playerHand.splice(randIdx, 1)[0];
@@ -176,8 +175,12 @@ class Pokegame extends Component {
     let completedSets = [];
     for (let i = 0; i < playerTypeCount.length; i++) {
       let [type, count] = playerTypeCount[i];
-      if (count === cardCoundNeededToCompleteSet) {
-        completedSets.push(...deck.filter((p) => p.type === type));
+      if (count >= cardCoundNeededToCompleteSet) {
+        completedSets.push(
+          ...deck
+            .filter((p) => p.type === type)
+            .slice(0, cardCoundNeededToCompleteSet)
+        );
       }
     }
     return currentCompletedSet.concat(completedSets);
@@ -291,9 +294,8 @@ class Pokegame extends Component {
         modalState: {
           isModalOpen: true,
           modalTitle: "Game Rules",
-          modalContent:
-            "Objective : Collect three sets (1 set = 3 cards) different types of pokemon or score >" +
-            pointsToWinGame,
+          modalContent: `Objective : Collect ${completedSetCountToWinGame} sets (1 set = ${cardCoundNeededToCompleteSet} cards) different types of pokemon or score >
+            ${pointsToWinGame}`,
           modalButton1: "Cool",
           modalButton2: "Got it",
           onButtonClick1: this.dismissModal,
@@ -357,7 +359,7 @@ class Pokegame extends Component {
         (filteredCards !== null && filteredCards.length <= 1) ||
         Math.random() > 0.5;
 
-      if (filteredCards.length === maxHandsPossible || !shouldPickFromDeck) {
+      if (filteredCards.length === maxCardInDeck || !shouldPickFromDeck) {
         let randomIdxToDiscard =
           Math.floor(Math.random() * 100) % filteredCards.length;
         let cardDiscarded = filteredCards[randomIdxToDiscard];
@@ -402,7 +404,7 @@ class Pokegame extends Component {
         this.state.playerHand,
         this.state.completedSetPlayer
       );
-      if (filteredHand.length >= maxHandsPossible) {
+      if (filteredHand.length >= maxCardInDeck) {
         this.setState({
           modalState: {
             ...cantAddCardorMakeMove,
@@ -475,14 +477,6 @@ class Pokegame extends Component {
                   // pokemon={this.state.computerHand}
                 />
               </div>
-              {/* <div className="Move"> */}
-              {/* <div
-                  hidden={this.state.isPlayerTurn}
-                  id="ComputerMoveText"
-                  className="ComputerMove"
-                >
-                  Computer's Move . . .
-                </div> */}
               <div
                 hidden={!this.state.isPlayerTurn}
                 id="PlayerMoveText"
