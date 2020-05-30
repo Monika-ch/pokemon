@@ -167,6 +167,7 @@ class Pokegame extends Component {
   setCompletedState = (stateHand, currentCompletedSet, completedHandName) => {
     let completedSets = this.getCompletedSets(stateHand, currentCompletedSet);
     this.setState({ [completedHandName]: completedSets });
+    return completedSets;
   };
 
   getCompletedSets = (stateHand, currentCompletedSet = []) => {
@@ -183,18 +184,19 @@ class Pokegame extends Component {
   };
 
   checkWinner = (playerHand, computerHand) => {
-    this.setCompletedState(
+    let newCompletedSetPlayer = this.setCompletedState(
       playerHand,
       this.state.completedSetPlayer,
       "completedSetPlayer"
     );
-    this.setCompletedState(
+
+    let newCompletedSetComputer = this.setCompletedState(
       computerHand,
       this.state.completedSetComputer,
       "completedSetComputer"
     );
 
-    if (this.isAWinningHand(computerHand)) {
+    if (this.isAWinningHand(computerHand, newCompletedSetComputer)) {
       this.setState({
         modalState: {
           ...computerWonModal,
@@ -203,7 +205,7 @@ class Pokegame extends Component {
         },
       });
     }
-    if (this.isAWinningHand(playerHand)) {
+    if (this.isAWinningHand(playerHand, newCompletedSetPlayer)) {
       this.setState({
         modalState: {
           ...humanWonModal,
