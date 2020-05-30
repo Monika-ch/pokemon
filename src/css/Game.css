@@ -13,11 +13,12 @@
 }
 
 .card-coming-soon h4 {
-  margin-top: 1.7rem;
+  font-family: 'Annie Use Your Telescope', cursive;
+  margin-top: 1.6rem;
   margin-bottom: 3rem;
   padding: 25px 0;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: blue;
   border-radius: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -41,10 +42,19 @@
   box-shadow: -25px 15px 12px -5px rgba(0, 0, 0, 0.6);
 }
 
-.card-coming-soon h6,
-p {
+.card-coming-soon h6 {
   padding: 0 20px 5px 20px;
-  font-size: 90%;
+  color: darkred;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Handlee', cursive;
+}
+
+.card-coming-soon p {
+  padding: 0 20px 5px 20px;
+  color: rgb(103, 46, 110);
+  font-size: 1.1rem;
+  font-family: 'Handlee', cursive;
 }
 
 .card-coming-soon .col-8:hover {
