@@ -1,7 +1,6 @@
 .modal {
   padding-top: 12%;
-  font-family: 'Special Elite',
-    cursive;
+  font-family: 'Special Elite', cursive;
 }
 
 /* 
@@ -12,8 +11,6 @@
 .modal-content {
   border-radius: 100px !important;
   box-shadow: -25px 25px 12px -5px#0e4242f3;
-
-
 }
 
 .modal-header {
@@ -29,21 +26,18 @@
 } */
 
 .modal h1 {
-  font-family: 'Amatic SC',
-    cursive;
-  font-size: 50px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 44px;
   font-weight: bold;
   letter-spacing: .5px;
 }
 
 .modal h2 {
   text-align: center;
-  font-size: 32px;
-  padding: 30px 50px;
+  font-size: 24px;
+  padding: 25px 50px;
   margin-bottom: -15px;
   color: #003eb0;
-  /* background-color: aliceblue; */
-
 }
 
 .card {
@@ -57,10 +51,11 @@
 
 .button1 {
   margin: 0 25px;
-  padding: 10px 25px;
+  padding: 10px 0;
   color: rgb(2, 0, 124);
   background-color: rgb(203, 233, 104);
   border: none;
+  width: 100px;
 }
 
 .button1:hover {
@@ -69,19 +64,17 @@
 
 .button2 {
   margin: 0 25px;
-  padding: 10px 40px;
+  padding: 10px 0;
   color: rgb(2, 0, 124);
   background-color: rgb(122, 228, 157);
   border: none;
+  width: 100px;
 }
 
 .button2:hover {
   color: rgb(5, 9, 252) !important;
 }
 
-#main-div {
-  background-color: red;
-}
 
 /* font-family: 'Amatic SC',
 cursive;

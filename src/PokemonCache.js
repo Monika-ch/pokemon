@@ -33,7 +33,7 @@ class PokemonCache {
     };
   }
 
-  constructor(maxPokemons = 100) {
+  constructor(maxPokemons = 200) {
     this.triggerDownload(maxPokemons);
   }
 }

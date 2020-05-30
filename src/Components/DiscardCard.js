@@ -1,26 +1,6 @@
 import React, { Component } from "react";
 import "../css/DiscardCard.css";
 
-// export default class DiscardCard extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <div>
-//           <div>
-//             <Pokecard
-//               id={this.props.id}
-//               name={this.props.name}
-//               type={this.props.type}
-//               exp={this.props.base_experience}
-//               usedAs="DiscardedCardUsage"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
 const POKE_API = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);

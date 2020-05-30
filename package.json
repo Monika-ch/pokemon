@@ -17,10 +17,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-loading-overlay": "^1.0.1",
     "react-popper": "^2.2.3",
     "react-router-dom": "4.2.2",
     "react-scripts": "3.4.1",
-    "reactstrap": "^8.4.1"
+    "react-spinners": "^0.8.3",
+    "reactstrap": "^8.4.1",
+    "spinner": "^0.3.4"
   },
   "scripts": {
     "start": "react-scripts start",

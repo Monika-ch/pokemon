@@ -7,6 +7,11 @@ import PokeModal from "./PokeModal";
 import { Redirect } from "react-router-dom";
 import ScoreList from "./ScoreList";
 import "../css/Pokedex.css";
+import LoadingOverlay from "react-loading-overlay";
+
+// CONSTANTS DEFINED HERE
+const timeForComputerMove = 1000;
+const pointsToWinGame = 2000;
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -70,7 +75,9 @@ const defaultState = {
   completedSetPlayer: [],
   completedSetComputer: [],
   isRedirect: false,
+  isPlayerTurn: true,
   selectedCard: null,
+  computerLastMove: "",
   modalState: {
     isModalOpen: false,
     modalTitle: "",
@@ -99,12 +106,17 @@ class Pokegame extends Component {
 
   resetState = (initialize = false) => {
     let computerHand = [];
+    // We first take 2*MaxCards in playerHand
+    // then we pick a random index between 0 and length of player hand
+    // and move that card to computer hand. We keep doing this till
+    // player hand and computer hand are equal
     let playerHand = [...this.getNRandomPokemon(maxHandsPossible * 2)];
     while (computerHand.length < playerHand.length) {
       let randIdx = Math.floor(Math.random() * playerHand.length);
       let randPokemon = playerHand.splice(randIdx, 1)[0];
       computerHand.push(randPokemon);
     }
+
     // for first time this.state = is necessary.
     // its like using a variable for first time, let x is necessary.
     // after that we can keep doing x=10, x=100 etc.
@@ -113,8 +125,12 @@ class Pokegame extends Component {
       this.state = defaultState;
       this.state.computerHand = computerHand;
       this.state.playerHand = playerHand;
-      this.setCompletedState(playerHand, "completedSetPlayer");
-      this.setCompletedState(computerHand, "completedSetComputer");
+      this.state.completedSetPlayer = this.getCompletedSets(
+        this.state.playerHand
+      );
+      this.state.completedSetComputer = this.getCompletedSets(
+        this.state.computerHand
+      );
     } else {
       this.setState(defaultState);
       this.setState(
@@ -137,7 +153,7 @@ class Pokegame extends Component {
   }
 
   // Winning by set = 3 sets of 3 card each
-  // Winning by exp == 2000 points
+  // Winning by exp == pointsToWinGame points
   isAWinningHand(hand) {
     // This is calculating how many pokemons of each type are there.-hero
     // For eg if the hand is ["fire", "fire", "something"] the countOfEachType array
@@ -147,25 +163,40 @@ class Pokegame extends Component {
     // Total 3 sets for each type
     const ifWinningBySet =
       countOfEachType.filter(([c, cnt]) => cnt > 2).length > 2;
-    const ifWinningByExp = this.getHandSum(hand) > 2000;
+    const ifWinningByExp = this.getHandSum(hand) > pointsToWinGame;
     return ifWinningBySet || ifWinningByExp;
   }
 
-  setCompletedState = (stateHand, completedHandName) => {
-    let playerTypeCount = getTypeCount(stateHand);
+  setCompletedState = (stateHand, currentCompletedSet, completedHandName) => {
+    let completedSets = this.getCompletedSets(stateHand, currentCompletedSet);
+    this.setState({ [completedHandName]: completedSets });
+  };
+
+  getCompletedSets = (stateHand, currentCompletedSet = []) => {
+    let deck = this.filterCompletedSet(stateHand, currentCompletedSet);
+    let playerTypeCount = getTypeCount(deck);
     let completedSets = [];
     for (let i = 0; i < playerTypeCount.length; i++) {
       let [type, count] = playerTypeCount[i];
-      if (count > 2) {
-        completedSets.push(...stateHand.filter((p) => p.type === type));
-        this.setState({ [completedHandName]: completedSets });
+      if (count === 2) {
+        completedSets.push(...deck.filter((p) => p.type === type));
       }
     }
+    return currentCompletedSet.concat(completedSets);
   };
 
   checkWinner = (playerHand, computerHand) => {
-    this.setCompletedState(playerHand, "completedSetPlayer");
-    this.setCompletedState(computerHand, "completedSetComputer");
+    this.setCompletedState(
+      playerHand,
+      this.state.completedSetPlayer,
+      "completedSetPlayer"
+    );
+    this.setCompletedState(
+      computerHand,
+      this.state.completedSetComputer,
+      "completedSetComputer"
+    );
+
     if (this.isAWinningHand(computerHand)) {
       this.setState({
         modalState: {
@@ -203,6 +234,7 @@ class Pokegame extends Component {
   };
 
   swapDiscardCard = (id, isComputer = false) => {
+    if (this.state.isPlayerTurn === false) return;
     console.log("swap discard card..............", id, isComputer);
     if (this.state.discardedCard.id == -1) {
       return;
@@ -228,9 +260,25 @@ class Pokegame extends Component {
   };
 
   filterCompletedSet = (hand, completedSet) => {
-    return hand.filter(
-      (p) => completedSet.findIndex((x) => p.id === x.id) === -1
-    );
+    console.log("Current hand is", hand);
+    console.log("CompletedSet is", completedSet);
+    let returnValue = [];
+    for (let i = 0; i < hand.length; i++) {
+      let p = hand[i];
+      let notInCompletedSet = true;
+
+      for (let j = 0; j < completedSet.length; j++) {
+        if (p.id === completedSet[j].id) {
+          notInCompletedSet = false;
+          break;
+        }
+      }
+      if (notInCompletedSet) {
+        returnValue.push(p);
+      }
+    }
+    console.log("Returned value is ", returnValue);
+    return returnValue;
   };
 
   getHandSum = (hand) => {
@@ -245,7 +293,8 @@ class Pokegame extends Component {
           isModalOpen: true,
           modalTitle: "Game Rules",
           modalContent:
-            "Objective : Collect three sets (1 set = 3 cards) different types of pokemon or score > 2000.",
+            "Objective : Collect three sets (1 set = 3 cards) different types of pokemon or score >" +
+            pointsToWinGame,
           modalButton1: "Cool",
           modalButton2: "Got it",
           onButtonClick1: this.dismissModal,
@@ -262,6 +311,7 @@ class Pokegame extends Component {
     let exp2 = this.getHandSum(playerHand);
 
     const onclick = (id) => {
+      if (this.state.isPlayerTurn === false) return;
       if (this.state.selectedCard != null) {
         let newHand = this.swapCardFromHand(this.state.playerHand, id);
         if (newHand !== null) {
@@ -270,7 +320,6 @@ class Pokegame extends Component {
           );
           this.setState({ selectedCard: null });
           makeComputerMove();
-          this.setState({});
         } else {
           // this means that a pokemon with less experience was selected
           this.setState({
@@ -299,32 +348,56 @@ class Pokegame extends Component {
       );
     };
 
-    const makeComputerMove = () => {
-      let shouldPickFromDeck =
-        Math.random() > 0.5 || this.state.computerHand.length === 1;
+    const logicOfComputerMove = () => {
+      let computerMovePrefix = "Computer's Move:";
       let filteredCards = this.filterCompletedSet(
         this.state.computerHand,
         this.state.completedSetComputer
       );
+      let shouldPickFromDeck =
+        (filteredCards !== null && filteredCards.length <= 1) ||
+        Math.random() > 0.5;
+
       if (filteredCards.length === maxHandsPossible || !shouldPickFromDeck) {
         let randomIdxToDiscard =
-          Math.floor(Math.random() * 100) % this.state.computerHand.length;
+          Math.floor(Math.random() * 100) % filteredCards.length;
+        let cardDiscarded = filteredCards[randomIdxToDiscard];
+
         discardCardAndSetState(
           "computerHand",
-          computerHand,
-          this.state.computerHand[randomIdxToDiscard].id
+          this.state.computerHand,
+          cardDiscarded.id
         );
+
+        computerMovePrefix += `Discarded ${cardDiscarded.name}`;
+        this.setState({ computerLastMove: computerMovePrefix });
         return;
       }
 
       if (this.state.computerHand.length === 1 || shouldPickFromDeck) {
-        let newHand = this.getCardFromDeck(computerHand);
+        let newHand = this.getCardFromDeck(this.state.computerHand);
+        computerMovePrefix += `Picked a card from deck`;
+        this.setState({ computerLastMove: computerMovePrefix });
+
         this.setState({ computerHand: newHand }, () =>
           this.checkWinner(this.state.playerHand, this.state.computerHand)
         );
       }
     };
+
+    const makeComputerMove = () => {
+      this.setState({ isPlayerTurn: false }, () => {
+        setTimeout(() => {
+          try {
+            logicOfComputerMove();
+          } finally {
+            this.setState({ isPlayerTurn: true });
+          }
+        }, timeForComputerMove);
+      });
+    };
     const onDeckClick = () => {
+      if (this.state.isPlayerTurn === false) return;
       this.setState({ selectedCard: null });
       let filteredHand = this.filterCompletedSet(
         this.state.playerHand,
@@ -351,6 +424,12 @@ class Pokegame extends Component {
 
     return (
       <div className="game-wrapper" tabIndex="0" onKeyUp={this.showRules}>
+        <LoadingOverlay
+          active={!this.state.isPlayerTurn}
+          spinner
+          text={"Computer's move"}
+        />
+
         <PokeModal
           isModalOpen={this.state.modalState.isModalOpen}
           modalTitle={this.state.modalState.modalTitle}
@@ -365,8 +444,8 @@ class Pokegame extends Component {
             <div className="col-3">
               <div className="CompleteSet-1 mt-auto">
                 <CompletedSet
-                  // pokemon={this.state.completedSetPlayer}
-                  pokemon={this.state.computerHand}
+                  pokemon={this.state.completedSetPlayer}
+                  // pokemon={this.state.computerHand}
                 />
               </div>
 
@@ -393,9 +472,18 @@ class Pokegame extends Component {
               </div>
               <div className="CompleteSet-2">
                 <CompletedSet
-                  // pokemon={this.state.completedSetComputer}
-                  pokemon={this.state.computerHand}
+                  pokemon={this.state.completedSetComputer}
+                  // pokemon={this.state.computerHand}
                 />
+              </div>
+              <div>
+                <div hidden={this.state.isPlayerTurn} id="ComputerMoveText">
+                  Computer's move
+                </div>
+                <div hidden={!this.state.isPlayerTurn} id="PlayerMoveText">
+                  Player's Move
+                </div>
+                <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
               </div>
             </div>
 
@@ -414,13 +502,19 @@ class Pokegame extends Component {
                 </div>
 
                 <div className="row center-me">
-                  <DiscardCard
-                    id={this.state.discardedCard.id}
-                    type={this.state.discardedCard.type}
-                    name={this.state.discardedCard.name}
-                    base_experience={this.state.discardedCard.base_experience}
-                    onClick={this.swapDiscardCard}
-                  />
+                  <div
+                    className={
+                      this.state.selectedCard != null ? " CardSelected" : ""
+                    }
+                  >
+                    <DiscardCard
+                      id={this.state.discardedCard.id}
+                      type={this.state.discardedCard.type}
+                      name={this.state.discardedCard.name}
+                      base_experience={this.state.discardedCard.base_experience}
+                      onClick={this.swapDiscardCard}
+                    />
+                  </div>
                   <CardDeck onDeckClick={onDeckClick} />
                 </div>
 
@@ -440,6 +534,7 @@ class Pokegame extends Component {
             </div>
           </div>
         </div>
+
         {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
           Redirect needs to be part of render function. It doesn't matter where it is put in html as we are moving away from this page
           Also read tutorial on conditional rendering: https://reactjs.org/docs/conditional-rendering.html*/}

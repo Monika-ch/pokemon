@@ -111,7 +111,7 @@ Button:hover {
     width: 260px;
     box-shadow: 22px 20px 30px -2px rgba(0, 0, 0, 0.56);
     opacity: .97;
-    border: 10px groove #004e92;
+    border: 10px outset #004e92;
     border-radius: 60px;
   }
 

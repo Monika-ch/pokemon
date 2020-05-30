@@ -48,7 +48,7 @@ class Home extends Component {
         <div className="container">
           <div className="battleCard">
             <div className="row justify-content-center">
-              <div className="col-md-8 col-11 mb-2">
+              <div className="col-md-9 col-11 mb-2">
                 <h5>Choose Your Battle</h5>
               </div>
               <div className="col-12">

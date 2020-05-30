@@ -17,7 +17,8 @@
 
 .game-wrapper {
   height: 100%;
-  width: 100%;
+  width: 100vw;
+  outline: none;
 }
 
 .CompleteSet-1 {
@@ -32,4 +33,17 @@
 
 .border-me {
   border-left: 1px rgba(169, 169, 169, 0.4) solid;
+}
+
+.CardSelected {
+  border: 2px ridge darkgrey;
+}
+
+._loading_overlay_content {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 50px;
+  color: red;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
 }
