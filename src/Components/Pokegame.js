@@ -10,8 +10,10 @@ import "../css/Pokedex.css";
 import LoadingOverlay from "react-loading-overlay";
 
 // CONSTANTS DEFINED HERE
-const timeForComputerMove = 1000;
+const timeForComputerMove = 1500;
 const pointsToWinGame = 2000;
+const completedSetCountToWinGame = 5;
+const cardCoundNeededToCompleteSet = 3;
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -154,15 +156,10 @@ class Pokegame extends Component {
 
   // Winning by set = 3 sets of 3 card each
   // Winning by exp == pointsToWinGame points
-  isAWinningHand(hand) {
-    // This is calculating how many pokemons of each type are there.-hero
-    // For eg if the hand is ["fire", "fire", "something"] the countOfEachType array
-    // will look like: ["fire":2, "something":1]
-    let countOfEachType = getTypeCount(hand);
-    // .some will check if any element from countOfEachType is greater than 2.
-    // Total 3 sets for each type
+  isAWinningHand(hand, completedSet) {
     const ifWinningBySet =
-      countOfEachType.filter(([c, cnt]) => cnt > 2).length > 2;
+      completedSet.length ===
+      cardCoundNeededToCompleteSet * completedSetCountToWinGame;
     const ifWinningByExp = this.getHandSum(hand) > pointsToWinGame;
     return ifWinningBySet || ifWinningByExp;
   }
@@ -178,7 +175,7 @@ class Pokegame extends Component {
     let completedSets = [];
     for (let i = 0; i < playerTypeCount.length; i++) {
       let [type, count] = playerTypeCount[i];
-      if (count === 2) {
+      if (count === cardCoundNeededToCompleteSet) {
         completedSets.push(...deck.filter((p) => p.type === type));
       }
     }
@@ -476,23 +473,23 @@ class Pokegame extends Component {
                   // pokemon={this.state.computerHand}
                 />
               </div>
-              <div className="Move">
-                <div
+              {/* <div className="Move"> */}
+              {/* <div
                   hidden={this.state.isPlayerTurn}
                   id="ComputerMoveText"
                   className="ComputerMove"
                 >
                   Computer's Move . . .
-                </div>
-                <div
-                  hidden={!this.state.isPlayerTurn}
-                  id="PlayerMoveText"
-                  className="PlayerMove"
-                >
-                  Player's Move . . .
-                </div>
-                <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
+                </div> */}
+              <div
+                hidden={!this.state.isPlayerTurn}
+                id="PlayerMoveText"
+                className="PlayerMove"
+              >
+                Player's Move . . .
               </div>
+              <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
+              {/* </div> */}
             </div>
 
             <div className="col-9 m-auto">
@@ -505,7 +502,6 @@ class Pokegame extends Component {
                     )}
                     onClick={onclick}
                     exp={exp2}
-                    isWinner={exp2 > exp1}
                   />
                 </div>
 
@@ -534,7 +530,6 @@ class Pokegame extends Component {
                     )}
                     exp={exp1}
                     isComputer
-                    isWinner={exp1 > exp2}
                     onClick={() => {}}
                   />
                 </div>
