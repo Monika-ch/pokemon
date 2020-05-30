@@ -36,14 +36,42 @@
 }
 
 .CardSelected {
-  border: 2px ridge darkgrey;
+  border: 1px ridge rgb(218, 206, 206);
 }
 
 ._loading_overlay_content {
-  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Handlee", cursive;
+  background-color: rgba(206, 164, 164, 0.4);
   padding-top: 50px;
-  color: red;
+  color: darkred;
   width: 300px;
   height: 200px;
   border-radius: 5px;
+}
+
+.ComputerMove {
+  color: darkred;
+  font-family: 'Handlee', cursive;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.PlayerMove {
+  color: green;
+  font-family: 'Handlee', cursive;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#ComputerMoveDetail {
+  color: darkred;
+  font-family: 'Handlee',
+    cursive;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-left: 60px;
 }

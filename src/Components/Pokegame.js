@@ -349,7 +349,7 @@ class Pokegame extends Component {
     };
 
     const logicOfComputerMove = () => {
-      let computerMovePrefix = "Computer's Move:";
+      let computerMovePrefix = "Computer's Move : ";
       let filteredCards = this.filterCompletedSet(
         this.state.computerHand,
         this.state.completedSetComputer
@@ -369,14 +369,14 @@ class Pokegame extends Component {
           cardDiscarded.id
         );
 
-        computerMovePrefix += `Discarded ${cardDiscarded.name}`;
+        computerMovePrefix += `Discarded ${cardDiscarded.name} !`;
         this.setState({ computerLastMove: computerMovePrefix });
         return;
       }
 
       if (this.state.computerHand.length === 1 || shouldPickFromDeck) {
         let newHand = this.getCardFromDeck(this.state.computerHand);
-        computerMovePrefix += `Picked a card from deck`;
+        computerMovePrefix += `Picked a card from deck !`;
         this.setState({ computerLastMove: computerMovePrefix });
 
         this.setState({ computerHand: newHand }, () =>
@@ -427,7 +427,7 @@ class Pokegame extends Component {
         <LoadingOverlay
           active={!this.state.isPlayerTurn}
           spinner
-          text={"Computer's move"}
+          text={"Computer's Move . . ."}
         />
 
         <PokeModal
@@ -476,12 +476,20 @@ class Pokegame extends Component {
                   // pokemon={this.state.computerHand}
                 />
               </div>
-              <div>
-                <div hidden={this.state.isPlayerTurn} id="ComputerMoveText">
-                  Computer's move
+              <div className="Move">
+                <div
+                  hidden={this.state.isPlayerTurn}
+                  id="ComputerMoveText"
+                  className="ComputerMove"
+                >
+                  Computer's Move . . .
                 </div>
-                <div hidden={!this.state.isPlayerTurn} id="PlayerMoveText">
-                  Player's Move
+                <div
+                  hidden={!this.state.isPlayerTurn}
+                  id="PlayerMoveText"
+                  className="PlayerMove"
+                >
+                  Player's Move . . .
                 </div>
                 <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
               </div>
