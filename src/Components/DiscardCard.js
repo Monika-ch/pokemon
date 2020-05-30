@@ -28,12 +28,12 @@ let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
 export default class DiscardCard extends Component {
   render() {
     let imgSrc = `${POKE_API}${padToThree(this.props.id)}.png`;
-    let width = 130;
+    let width = 120;
     let hidePokemonDetails = false;
 
     if (this.props.id === -1) {
       imgSrc = "transparent-pokemon-2.png";
-      width = 110;
+      width = 90;
       hidePokemonDetails = true;
     }
 

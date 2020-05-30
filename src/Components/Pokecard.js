@@ -17,14 +17,14 @@ class Pokecard extends Component {
     let name = this.props.name;
     let type = this.props.type;
     let exp = this.props.exp;
-    let width = 110;
+    let width = 100;
 
     if (this.props.usedAs === "ComputerCardUage") {
       imgSrc = "ultraball.png";
       name = "Pokemon";
       type = "??";
       exp = "??";
-      width = 80;
+      width = 60;
     }
 
     return (

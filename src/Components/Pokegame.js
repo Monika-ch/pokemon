@@ -204,6 +204,9 @@ class Pokegame extends Component {
 
   swapDiscardCard = (id, isComputer = false) => {
     console.log("swap discard card..............", id, isComputer);
+    if (this.state.discardedCard.id == -1) {
+      return;
+    }
     let selectedCard = this.state.discardedCard;
     if (isComputer === false) {
       this.setState({ selectedCard: selectedCard });
@@ -357,65 +360,84 @@ class Pokegame extends Component {
           modalButton2={this.state.modalState.modalButton2}
           onClickButton2={this.state.modalState.onButtonClick2}
         />
-        <div className="row">
-          <div className="wrapper">
-            <div className="ScoreList">
-              <ScoreList
-                isComputer={false}
-                pokemon={this.state.playerHand}
-                exp={exp2}
-              />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-3">
+              <div className="CompleteSet-1 mt-auto">
+                <CompletedSet
+                  // pokemon={this.state.completedSetPlayer}
+                  pokemon={this.state.computerHand}
+                />
+              </div>
+
+              <div className="scorelist-wrapper">
+                <div className="container">
+                  <div className="mb-4">
+                    <div className="ScoreList row m-auto">
+                      <ScoreList
+                        isComputer={false}
+                        pokemon={this.state.playerHand}
+                        exp={exp2}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="ScoreList row m-auto">
+                    <ScoreList
+                      isComputer={true}
+                      pokemon={this.state.computerHand}
+                      exp={exp1}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="CompleteSet-2">
+                <CompletedSet
+                  // pokemon={this.state.completedSetComputer}
+                  pokemon={this.state.computerHand}
+                />
+              </div>
             </div>
 
-            <Pokedex
-              pokemon={this.filterCompletedSet(
-                this.state.playerHand,
-                this.state.completedSetPlayer
-              )}
-              onClick={onclick}
-              exp={exp2}
-              isWinner={exp2 > exp1}
-            />
-          </div>
-        </div>
-        <CompletedSet
-          pokemon={this.state.completedSetPlayer}
-          // usedAs="DiscardedCardUsage"
-        />
-        <div className="row center-me">
-          <DiscardCard
-            id={this.state.discardedCard.id}
-            type={this.state.discardedCard.type}
-            name={this.state.discardedCard.name}
-            base_experience={this.state.discardedCard.base_experience}
-            onClick={this.swapDiscardCard}
-          />
-          <CardDeck onDeckClick={onDeckClick} />
-        </div>
-        <CompletedSet
-          pokemon={this.state.completedSetComputer}
-          // usedAs="DiscardedCardUsage"
-        />
-        <div className="row">
-          <div className="wrapper">
-            <div className="ScoreList">
-              <ScoreList
-                isComputer={true}
-                pokemon={this.state.computerHand}
-                exp={exp1}
-              />
-            </div>
+            <div className="col-9 m-auto">
+              <div className="container-fluid border-me">
+                <div className="row center-me">
+                  <Pokedex
+                    pokemon={this.filterCompletedSet(
+                      this.state.playerHand,
+                      this.state.completedSetPlayer
+                    )}
+                    onClick={onclick}
+                    exp={exp2}
+                    isWinner={exp2 > exp1}
+                  />
+                </div>
 
-            <Pokedex
-              pokemon={this.filterCompletedSet(
-                this.state.computerHand,
-                this.state.completedSetComputer
-              )}
-              exp={exp1}
-              isComputer
-              isWinner={exp1 > exp2}
-              onClick={() => {}}
-            />
+                <div className="row center-me">
+                  <DiscardCard
+                    id={this.state.discardedCard.id}
+                    type={this.state.discardedCard.type}
+                    name={this.state.discardedCard.name}
+                    base_experience={this.state.discardedCard.base_experience}
+                    onClick={this.swapDiscardCard}
+                  />
+                  <CardDeck onDeckClick={onDeckClick} />
+                </div>
+
+                <div className="row center-me">
+                  <Pokedex
+                    pokemon={this.filterCompletedSet(
+                      this.state.computerHand,
+                      this.state.completedSetComputer
+                    )}
+                    exp={exp1}
+                    isComputer
+                    isWinner={exp1 > exp2}
+                    onClick={() => {}}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs

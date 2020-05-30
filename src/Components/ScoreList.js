@@ -13,7 +13,7 @@ class ScoreList extends Component {
       playerName = "COMPUTER";
     }
     return (
-      <div className="ScoreList-wrapper">
+      <div>
         <h5 className="ScoreList-title">{playerName}</h5>
         <div className="Score">
           <h6>

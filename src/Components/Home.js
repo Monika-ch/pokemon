@@ -48,18 +48,26 @@ class Home extends Component {
         <div className="container">
           <div className="battleCard">
             <div className="row justify-content-center">
-              <div className="col-8 mb-2">
+              <div className="col-md-8 col-11 mb-2">
                 <h5>Choose Your Battle</h5>
               </div>
               <div className="col-12">
                 <Link to="/pokemon">
-                  <Button outline color="danger" className="mt-2 p-2 col-6">
+                  <Button
+                    outline
+                    color="danger"
+                    className="mt-md-2 p-2 col-md-6 col-8"
+                  >
                     vs Computer
                   </Button>
                 </Link>
                 <br />
                 <Link to="/friendgame">
-                  <Button outline color="warning" className="mt-3 p-2 col-6">
+                  <Button
+                    outline
+                    color="warning"
+                    className="mt-md-3 p-2 col-md-6 col-8"
+                  >
                     vs A Friend
                   </Button>
                 </Link>
@@ -68,14 +76,14 @@ class Home extends Component {
                   <Button
                     outline
                     color="success"
-                    className="mt-3 mb-2 p-2 col-6"
+                    className="mt-md-3 mb-2 p-2 col-md-6 col-8"
                   >
                     vs Random Opponent
                   </Button>
                 </Link>
                 <br />
                 <Link to="/game_rules" className="mt-2">
-                  <Button outline className="mt-3 col-6 game-rules">
+                  <Button outline className="mt-md-3 col-md-6 col-8 game-rules">
                     Game Rules
                   </Button>
                 </Link>
