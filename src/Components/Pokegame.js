@@ -8,6 +8,9 @@ import { Redirect } from "react-router-dom";
 import ScoreList from "./ScoreList";
 import "../css/Pokedex.css";
 import LoadingOverlay from "react-loading-overlay";
+import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Prompt } from "react-router";
 
 // CONSTANTS DEFINED HERE
 const timeForComputerMove = 1500;
@@ -79,6 +82,7 @@ const defaultState = {
   isPlayerTurn: true,
   selectedCard: null,
   computerLastMove: "",
+  gameOver: false,
   modalState: {
     isModalOpen: false,
     modalTitle: "",
@@ -201,6 +205,7 @@ class Pokegame extends Component {
 
     if (this.isAWinningHand(computerHand, newCompletedSetComputer)) {
       this.setState({
+        gameOver: true,
         modalState: {
           ...computerWonModal,
           onButtonClick1: this.onNewGame,
@@ -210,6 +215,7 @@ class Pokegame extends Component {
     }
     if (this.isAWinningHand(playerHand, newCompletedSetPlayer)) {
       this.setState({
+        gameOver: true,
         modalState: {
           ...humanWonModal,
           onButtonClick1: this.onNewGame,
@@ -431,6 +437,11 @@ class Pokegame extends Component {
           text={"Computer's Move . . ."}
         />
 
+        <Prompt
+          when={!this.state.gameOver}
+          message="Are you sure you want to leave the Poke-battle?"
+        />
+
         <PokeModal
           isModalOpen={this.state.modalState.isModalOpen}
           modalTitle={this.state.modalState.modalTitle}
@@ -486,6 +497,14 @@ class Pokegame extends Component {
               </div>
               <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
               {/* </div> */}
+            </div>
+
+            <div>
+              <Link to="/">
+                <Button size="lg" color="success" className="button">
+                  <i className="fa fa-home fa-lg" />
+                </Button>
+              </Link>
             </div>
 
             <div className="col-9 m-auto">
