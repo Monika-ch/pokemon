@@ -6,12 +6,50 @@ header {
 }
 
 header h1 {
-  font-size: 88px;
+  font-size: 5rem;
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
-  color: rgb(15, 37, 109);
-  text-shadow: -2px -1px 0 rgb(255, 0, 0), 2px -1px 0 rgb(255, 196, 0),
-    -2px 1px 0 rgb(0, 0, 0), 2px 1px 0 #000;
+  /* background: #005C97; */
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #363795, #005C97); */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #363795, #005C97); */
+  background-size: 500% 500%;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* color: rgb(15, 37, 109); */
+  /* text-shadow: -2px -1px 0 rgb(255, 0, 0), 2px -1px 0 rgb(255, 196, 0),
+    -2px 1px 0 rgb(0, 0, 0), 2px 1px 0 #000; */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: moveBg 10s linear infinite;
+  -webkit-animation: moveBg 10s cir infinite;
+  /* background-image: linear-gradient(289deg, rgba(131, 131, 131, 0.07) 0%, rgba(131, 131, 131, 0.07) 17%, rgba(142, 142, 142, 0.07) 17%, rgba(142, 142, 142, 0.07) 30%, rgba(32, 32, 32, 0.07) 30%, rgba(32, 32, 32, 0.07) 63%, rgba(179, 179, 179, 0.07) 63%, rgba(179, 179, 179, 0.07) 76%, rgba(134, 134, 134, 0.07) 76%, rgba(134, 134, 134, 0.07) 100%),
+    linear-gradient(199deg, rgba(86, 86, 86, 0.05) 0%, rgba(86, 86, 86, 0.05) 77%, rgba(27, 27, 27, 0.05) 77%, rgba(27, 27, 27, 0.05) 78%, rgba(200, 200, 200, 0.05) 78%, rgba(200, 200, 200, 0.05) 98%, rgba(91, 91, 91, 0.05) 98%, rgba(91, 91, 91, 0.05) 100%),
+    linear-gradient(244deg, rgba(144, 144, 144, 0.03) 0%, rgba(144, 144, 144, 0.03) 10%, rgba(186, 186, 186, 0.03) 10%, rgba(186, 186, 186, 0.03) 11%, rgba(26, 26, 26, 0.03) 11%, rgba(26, 26, 26, 0.03) 31%, rgba(59, 59, 59, 0.03) 31%, rgba(59, 59, 59, 0.03) 66%, rgba(137, 137, 137, 0.03) 66%, rgba(137, 137, 137, 0.03) 78%, rgba(37, 37, 37, 0.03) 78%, rgba(37, 37, 37, 0.03) 97%, rgba(112, 112, 112, 0.03) 97%, rgba(112, 112, 112, 0.03) 100%),
+    linear-gradient(199deg, rgba(111, 111, 111, 0.05) 0%, rgba(111, 111, 111, 0.05) 22%, rgba(135, 135, 135, 0.05) 22%, rgba(135, 135, 135, 0.05) 54%, rgba(209, 209, 209, 0.05) 54%, rgba(209, 209, 209, 0.05) 59%, rgba(56, 56, 56, 0.05) 59%, rgba(56, 56, 56, 0.05) 79%, rgba(85, 85, 85, 0.05) 79%, rgba(85, 85, 85, 0.05) 87%, rgba(8, 8, 8, 0.05) 87%, rgba(8, 8, 8, 0.05) 100%),
+    linear-gradient(154deg, rgba(207, 207, 207, 0.08) 0%, rgba(207, 207, 207, 0.08) 17%, rgba(85, 85, 85, 0.08) 17%, rgba(85, 85, 85, 0.08) 38%, rgba(45, 45, 45, 0.08) 38%, rgba(45, 45, 45, 0.08) 59%, rgba(236, 236, 236, 0.08) 59%, rgba(236, 236, 236, 0.08) 68%, rgba(160, 160, 160, 0.08) 68%, rgba(160, 160, 160, 0.08) 86%, rgba(149, 149, 149, 0.08) 86%, rgba(149, 149, 149, 0.08) 100%),
+    linear-gradient(199deg, rgba(30, 30, 30, 0.07) 0%, rgba(30, 30, 30, 0.07) 21%, rgba(195, 195, 195, 0.07) 21%, rgba(195, 195, 195, 0.07) 36%, rgba(251, 251, 251, 0.07) 36%, rgba(251, 251, 251, 0.07) 48%, rgba(117, 117, 117, 0.07) 48%, rgba(117, 117, 117, 0.07) 75%, rgba(98, 98, 98, 0.07) 75%, rgba(98, 98, 98, 0.07) 87%, rgba(153, 153, 153, 0.07) 87%, rgba(153, 153, 153, 0.07) 95%, rgba(215, 215, 215, 0.07) 95%, rgba(215, 215, 215, 0.07) 100%),
+    linear-gradient(199deg, rgba(233, 233, 233, 0.07) 0%, rgba(233, 233, 233, 0.07) 4%, rgba(224, 224, 224, 0.07) 4%, rgba(224, 224, 224, 0.07) 21%, rgba(194, 194, 194, 0.07) 21%, rgba(194, 194, 194, 0.07) 49%, rgba(83, 83, 83, 0.07) 49%, rgba(83, 83, 83, 0.07) 58%, rgba(71, 71, 71, 0.07) 58%, rgba(71, 71, 71, 0.07) 75%, rgba(139, 139, 139, 0.07) 75%, rgba(139, 139, 139, 0.07) 92%, rgba(236, 236, 236, 0.07) 92%, rgba(236, 236, 236, 0.07) 94%, rgba(226, 219, 219, 0.06) 94%, rgba(226, 219, 219, 0.06) 100%),
+    linear-gradient(244deg, rgb(238, 248, 1), rgb(11, 255, 20)); */
+  background-image: linear-gradient(295deg, rgba(231, 231, 231, 0.08) 0%, rgba(231, 231, 231, 0.08) 14%, rgba(224, 224, 224, 0.08) 14%, rgba(224, 224, 224, 0.08) 51%, rgba(140, 140, 140, 0.08) 51%, rgba(140, 140, 140, 0.08) 100%),
+    linear-gradient(295deg, rgba(244, 244, 244, 0.09) 0%, rgba(244, 244, 244, 0.09) 21%, rgba(158, 158, 158, 0.09) 21%, rgba(158, 158, 158, 0.09) 31%, rgba(162, 162, 162, 0.09) 31%, rgba(162, 162, 162, 0.09) 89%, rgba(115, 115, 115, 0.09) 89%, rgba(115, 115, 115, 0.09) 100%),
+    linear-gradient(295deg, rgb(59, 53, 68), rgba(22, 0, 75, 0.973));
+}
+
+
+@keyframes moveBg {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 0 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 header h1:hover {
@@ -35,13 +73,13 @@ header h3 {
 .battleCard {
   background: #000428;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: -webkit-linear-gradient(200deg, #004e92, #000428);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(135deg, #004e92, #000428);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 80px auto;
-  height: 450px;
-  max-width: 600px;
+  height: 320px;
+  max-width: 450px;
   letter-spacing: 1px;
   box-shadow: 10px -20px 30px 20px rgba(7, 7, 7, 0.8);
   /* box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56); */
@@ -50,6 +88,24 @@ header h3 {
   text-align: center;
   border-radius: 15px;
   border: 5px ridge #004e92;
+  background-size: 200% 200%;
+  position: relative;
+  animation: change1 5s ease-out infinite;
+  -webkit-animation: change1 5s ease-out infinite;
+}
+
+@keyframes change1 {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 .battleCard h5 {
@@ -57,37 +113,91 @@ header h3 {
   margin-bottom: 25px;
   padding-top: 10px;
   padding-bottom: 20px;
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 30px;
   font-family: "Piedra", cursive;
-  letter-spacing: 2px;
-  color: rgb(255, 166, 0);
-  border-bottom: 5px ridge rgb(255, 166, 0);
+  /* letter-spacing: 1px; */
+  color: rgb(217, 255, 0);
+  border-bottom: 2px ridge rgb(0, 255, 149);
   border-radius: 4px;
   box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
-  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
-    -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000;
+  /* text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
+    -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000; */
   /* text-shadow: -1px -1px 0 rgb(231, 247, 7), 1px -1px 0 rgb(243, 4, 4), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 #000; */
 }
 
-Button {
+.all-btn {
+  font-family: "Special Elite", cursive;
+  background-color: transparent;
   box-shadow: -17px 10px 12px -7px rgba(63, 27, 27, 0.56);
-  border-radius: 10px !important;
-  letter-spacing: 0.8px !important;
-  font-family: "Special Elite", cursive !important;
+  border-radius: 10px;
+  border: 1px solid;
+  letter-spacing: 0.8px;
+  transition: all 0.5s;
+
+  /* box-shadow: 0 0 5px 0 #d4d8db inset, 0 0 5px 2px #d5e7f3; */
 }
 
-Button:hover {
-  transform: scale(1.1);
-  color: white !important;
-  opacity: 0.9;
+.all-btn:hover {
+  transform: scale(1.05);
   transition: all ease 500ms;
-  border: 1px solid white !important;
+  box-shadow: 17px 0 1px 1px inset, 17px 0 1px 0;
+  border: none;
+  left: -10px;
+}
+
+/* .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+} */
+
+.all-btn span {
+  position: relative;
+  transition: 0.5s;
+}
+
+.all-btn span:after {
+  content: '>>';
+  font-size: 1.25rem;
+  position: absolute;
+  opacity: 0;
+  top: -5px;
+  right: -20px;
+  transition: 0.5s;
+
+}
+
+.all-btn:hover span {
+  padding-right: 25px;
+}
+
+.all-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn1 {
+  color: rgb(0, 255, 0)
+}
+
+.btn2 {
+  color: yellow
+}
+
+.btn3 {
+  color: rgb(0, 255, 0)
 }
 
 .game-rules {
-  color: white !important;
-  border: 1px solid white !important;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -124,9 +234,9 @@ Button:hover {
     opacity: .95;
   }
 
-  Button {
-    font-size: 12px !important;
-    margin-top: .75rem !important;
-    border-radius: 5px !important;
+  .all-btn {
+    font-size: 12px;
+    margin-top: .75rem;
+    border-radius: 5px;
   }
 }

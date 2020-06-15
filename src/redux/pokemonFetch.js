@@ -1,6 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 
-const maxPokemons = 120;
+const maxPokemons = 14;
 
 export const getPokemonData = () => async (dispatch) => {
   dispatch(onLoadingStarted());

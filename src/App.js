@@ -14,8 +14,10 @@ class App extends Component {
     // see here:https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
     return (
       <BrowserRouter basename={baseUrl}>
-        <div className="App">
-          <Routes />
+        <div className="outermost-wrapper">
+          <div className="App">
+            <Routes />
+          </div>
         </div>
       </BrowserRouter>
     );

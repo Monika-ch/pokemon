@@ -4,6 +4,12 @@
     background: linear-gradient(to right, #F37335, #FDC830);
 } */
 
+/* .outermost-wrapper {
+  background: #FDC830;
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);
+  background: linear-gradient(to right, #F37335, #FDC830);
+} */
+
 .card-coming-soon {
   height: 450px;
   letter-spacing: 1px;
@@ -19,20 +25,22 @@
   padding: 25px 0;
   font-weight: bold;
   font-size: 1.6rem;
-  color: blue;
+  color: rgb(58, 58, 112);
   border-radius: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 2px 10px 12px -2px rgba(0, 0, 0, 0.56);
 }
 
 .card-coming-soon .col-8 {
-  background: #00c3ff;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ffff1c, #ffff1c, #00c3ff);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffff1c, #ffff1c, #00c3ff);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: rgb(80, 56, 32);
+  background-image: linear-gradient(289deg, rgba(131, 131, 131, 0.07) 0%, rgba(131, 131, 131, 0.07) 17%, rgba(142, 142, 142, 0.07) 17%, rgba(142, 142, 142, 0.07) 30%, rgba(32, 32, 32, 0.07) 30%, rgba(32, 32, 32, 0.07) 63%, rgba(179, 179, 179, 0.07) 63%, rgba(179, 179, 179, 0.07) 76%, rgba(134, 134, 134, 0.07) 76%, rgba(134, 134, 134, 0.07) 100%),
+    linear-gradient(199deg, rgba(86, 86, 86, 0.05) 0%, rgba(86, 86, 86, 0.05) 77%, rgba(27, 27, 27, 0.05) 77%, rgba(27, 27, 27, 0.05) 78%, rgba(200, 200, 200, 0.05) 78%, rgba(200, 200, 200, 0.05) 98%, rgba(91, 91, 91, 0.05) 98%, rgba(91, 91, 91, 0.05) 100%),
+    linear-gradient(244deg, rgba(144, 144, 144, 0.03) 0%, rgba(144, 144, 144, 0.03) 10%, rgba(186, 186, 186, 0.03) 10%, rgba(186, 186, 186, 0.03) 11%, rgba(26, 26, 26, 0.03) 11%, rgba(26, 26, 26, 0.03) 31%, rgba(59, 59, 59, 0.03) 31%, rgba(59, 59, 59, 0.03) 66%, rgba(137, 137, 137, 0.03) 66%, rgba(137, 137, 137, 0.03) 78%, rgba(37, 37, 37, 0.03) 78%, rgba(37, 37, 37, 0.03) 97%, rgba(112, 112, 112, 0.03) 97%, rgba(112, 112, 112, 0.03) 100%),
+    linear-gradient(199deg, rgba(111, 111, 111, 0.05) 0%, rgba(111, 111, 111, 0.05) 22%, rgba(135, 135, 135, 0.05) 22%, rgba(135, 135, 135, 0.05) 54%, rgba(209, 209, 209, 0.05) 54%, rgba(209, 209, 209, 0.05) 59%, rgba(56, 56, 56, 0.05) 59%, rgba(56, 56, 56, 0.05) 79%, rgba(85, 85, 85, 0.05) 79%, rgba(85, 85, 85, 0.05) 87%, rgba(8, 8, 8, 0.05) 87%, rgba(8, 8, 8, 0.05) 100%),
+    linear-gradient(154deg, rgba(207, 207, 207, 0.08) 0%, rgba(207, 207, 207, 0.08) 17%, rgba(85, 85, 85, 0.08) 17%, rgba(85, 85, 85, 0.08) 38%, rgba(45, 45, 45, 0.08) 38%, rgba(45, 45, 45, 0.08) 59%, rgba(236, 236, 236, 0.08) 59%, rgba(236, 236, 236, 0.08) 68%, rgba(160, 160, 160, 0.08) 68%, rgba(160, 160, 160, 0.08) 86%, rgba(149, 149, 149, 0.08) 86%, rgba(149, 149, 149, 0.08) 100%),
+    linear-gradient(199deg, rgba(30, 30, 30, 0.07) 0%, rgba(30, 30, 30, 0.07) 21%, rgba(195, 195, 195, 0.07) 21%, rgba(195, 195, 195, 0.07) 36%, rgba(251, 251, 251, 0.07) 36%, rgba(251, 251, 251, 0.07) 48%, rgba(117, 117, 117, 0.07) 48%, rgba(117, 117, 117, 0.07) 75%, rgba(98, 98, 98, 0.07) 75%, rgba(98, 98, 98, 0.07) 87%, rgba(153, 153, 153, 0.07) 87%, rgba(153, 153, 153, 0.07) 95%, rgba(215, 215, 215, 0.07) 95%, rgba(215, 215, 215, 0.07) 100%),
+    linear-gradient(199deg, rgba(233, 233, 233, 0.07) 0%, rgba(233, 233, 233, 0.07) 4%, rgba(224, 224, 224, 0.07) 4%, rgba(224, 224, 224, 0.07) 21%, rgba(194, 194, 194, 0.07) 21%, rgba(194, 194, 194, 0.07) 49%, rgba(83, 83, 83, 0.07) 49%, rgba(83, 83, 83, 0.07) 58%, rgba(71, 71, 71, 0.07) 58%, rgba(71, 71, 71, 0.07) 75%, rgba(139, 139, 139, 0.07) 75%, rgba(139, 139, 139, 0.07) 92%, rgba(236, 236, 236, 0.07) 92%, rgba(236, 236, 236, 0.07) 94%, rgba(226, 219, 219, 0.06) 94%, rgba(226, 219, 219, 0.06) 100%),
+    linear-gradient(244deg, rgb(31, 161, 107), rgb(11, 247, 255));
+  /* color: rgb(80, 56, 32); */
   padding: 15px 20px;
   height: 310px;
   box-sizing: content-box;
@@ -44,7 +52,7 @@
 
 .card-coming-soon h6 {
   padding: 0 20px 5px 20px;
-  color: darkred;
+  color: rgb(134, 65, 65);
   font-size: 1rem;
   font-weight: 600;
   font-family: 'Handlee', cursive;

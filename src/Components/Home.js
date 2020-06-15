@@ -53,7 +53,7 @@ class Home extends Component {
           </div>
         </header>
 
-        <div className="container">
+        <div className="container-fluid">
           <div className="battleCard">
             <div className="row justify-content-center">
               <div className="col-md-9 col-11 mb-2">
@@ -61,39 +61,32 @@ class Home extends Component {
               </div>
               <div className="col-12">
                 <Link to="/pokemon">
-                  <Button
+                  <button
                     outline
                     color="danger"
-                    className="mt-md-2 p-2 col-md-6 col-8"
+                    className="mt-md-2 p-2 col-md-6 col-8 all-btn btn1"
                   >
                     vs Computer
-                  </Button>
+                  </button>
                 </Link>
                 <br />
                 <Link to="/friendgame">
-                  <Button
+                  <button
                     outline
                     color="warning"
-                    className="mt-md-3 p-2 col-md-6 col-8"
+                    className="mt-md-3 p-2 col-md-6 col-8 all-btn btn2"
                   >
                     vs A Friend
-                  </Button>
-                </Link>
-                <br />
-                <Link to="/randomgame">
-                  <Button
-                    outline
-                    color="success"
-                    className="mt-md-3 mb-2 p-2 col-md-6 col-8"
-                  >
-                    vs Random Opponent
-                  </Button>
+                  </button>
                 </Link>
                 <br />
                 <Link to="/game_rules" className="mt-2">
-                  <Button outline className="mt-md-3 col-md-6 col-8 game-rules">
-                    Game Rules
-                  </Button>
+                  <button
+                    outline
+                    className="mt-md-3 col-md-6 col-8 all-btn game-rules"
+                  >
+                    <span>Game Rules</span>
+                  </button>
                 </Link>
               </div>
             </div>
