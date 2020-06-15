@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 import CircleType from "circletype";
 // import { Switch, Route, Redirect } from "react-router-dom";
 import "../css/Home.css";
+import { connect } from "react-redux";
+import { getPokemonData } from "../redux/pokemonFetch";
+import PokemonCache from "../PokemonCache";
+
+const mapDispatchToProps = {
+  getPokemonData,
+};
 
 class Home extends Component {
   componentDidMount() {
     console.log(document.getElementsByClassName("arc")[0]);
     let circleType = new CircleType(document.getElementsByClassName("arc")[0]);
     circleType.dir(-1).radius(350);
+    this.props.getPokemonData();
   }
 
   render() {
@@ -96,4 +104,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect(null, mapDispatchToProps)(Home);

@@ -5,16 +5,21 @@ import Home from "./Components/Home";
 import FriendGame from "./Components/FriendGame";
 import RandomGame from "./Components/RandomGame";
 import GameRules from "./Components/GameRules";
+import { ConfigureStore } from "./redux/configureStore";
+import { Provider } from "react-redux";
 
+const store = ConfigureStore();
 export default function Routes() {
   return (
-    <Switch>
-      <Route path="/pokemon" component={Main} />
-      <Route path="/friendgame" component={FriendGame} />
-      <Route path="/randomgame" component={RandomGame} />
-      <Route path="/game_rules" component={GameRules} />
-      <Route path="/pokemon/:id" render={Main.pokemon} />
-      <Route exact path="/" component={Home} />
-    </Switch>
+    <Provider store={store}>
+      <Switch>
+        <Route path="/pokemon" component={Main} />
+        <Route path="/friendgame" component={FriendGame} />
+        <Route path="/randomgame" component={RandomGame} />
+        <Route path="/game_rules" component={GameRules} />
+        <Route path="/pokemon/:id" render={Main.pokemon} />
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Provider>
   );
 }

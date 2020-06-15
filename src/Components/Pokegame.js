@@ -11,6 +11,7 @@ import LoadingOverlay from "react-loading-overlay";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Prompt } from "react-router";
+import { connect } from "react-redux";
 
 // CONSTANTS DEFINED HERE
 const timeForComputerMove = 1500;
@@ -23,8 +24,7 @@ function getRandom(arr, n) {
   var result = new Array(n),
     len = arr.length,
     taken = new Array(len);
-  if (n > len)
-    throw new RangeError("getRandom: more elements taken than available");
+  if (n > len) return [];
   while (n--) {
     var x = Math.floor(Math.random() * len);
     result[n] = arr[x in taken ? taken[x] : x];
@@ -47,6 +47,13 @@ function getTypeCount(hand) {
   );
   return countOfEachType;
 }
+
+const mapStateToProps = (state) => {
+  console.log("Got state in map........++++", state);
+  return {
+    isPokemonLoading: state.pokemons.isLoading,
+  };
+};
 
 const cantAddCardorMakeMove = {
   isModalOpen: true,
@@ -109,6 +116,8 @@ class Pokegame extends Component {
     console.log("State in constructor:", JSON.stringify(this.state));
   }
 
+  canMakeMove = () => this.state.isPlayerTurn && !this.props.isPokemonLoading;
+
   resetState = (initialize = false) => {
     let computerHand = [];
     // We first take 2*MaxCards in playerHand
@@ -121,6 +130,8 @@ class Pokegame extends Component {
       let randPokemon = playerHand.splice(randIdx, 1)[0];
       computerHand.push(randPokemon);
     }
+
+    let shouldRedirect = !computerHand || !computerHand.length;
 
     // for first time this.state = is necessary.
     // its like using a variable for first time, let x is necessary.
@@ -136,12 +147,20 @@ class Pokegame extends Component {
       this.state.completedSetComputer = this.getCompletedSets(
         this.state.computerHand
       );
+      this.state.isRedirect = shouldRedirect;
+      if (shouldRedirect) {
+        this.state.gameOver = true;
+      }
     } else {
       this.setState(defaultState);
       this.setState(
         { playerHand: playerHand, computerHand: computerHand },
         () => this.checkWinner(this.state.playerHand, this.state.computerHand)
       );
+      this.setState({ isRedirect: shouldRedirect });
+      if (shouldRedirect) {
+        this.setState({ gameOver: true });
+      }
     }
   };
 
@@ -242,7 +261,7 @@ class Pokegame extends Component {
   };
 
   swapDiscardCard = (id, isComputer = false) => {
-    if (this.state.isPlayerTurn === false) return;
+    if (this.canMakeMove() === false) return;
     console.log("swap discard card..............", id, isComputer);
     if (this.state.discardedCard.id == -1) {
       return;
@@ -318,7 +337,7 @@ class Pokegame extends Component {
     let exp2 = this.getHandSum(playerHand);
 
     const onclick = (id) => {
-      if (this.state.isPlayerTurn === false) return;
+      if (this.canMakeMove() === false) return;
       if (this.state.selectedCard != null) {
         let newHand = this.swapCardFromHand(this.state.playerHand, id);
         if (newHand !== null) {
@@ -404,7 +423,7 @@ class Pokegame extends Component {
       });
     };
     const onDeckClick = () => {
-      if (this.state.isPlayerTurn === false) return;
+      if (this.canMakeMove() === false) return;
       this.setState({ selectedCard: null });
       let filteredHand = this.filterCompletedSet(
         this.state.playerHand,
@@ -436,7 +455,7 @@ class Pokegame extends Component {
           spinner
           text={"Computer's Move . . ."}
         />
-
+        <LoadingOverlay active={this.props.isPokemonLoading} spinner />
         <Prompt
           when={!this.state.gameOver}
           message="Are you sure you want to leave the Poke-battle?"
@@ -562,4 +581,4 @@ class Pokegame extends Component {
   }
 }
 
-export default Pokegame;
+export default connect(mapStateToProps)(Pokegame);

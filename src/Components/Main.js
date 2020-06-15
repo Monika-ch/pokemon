@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Pokecard from "./Pokecard";
 import Pokegame from "./Pokegame";
-import PokemonCache from "../PokemonCache";
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+  return {
+    pokemon: state.pokemons,
+  };
+};
 
 class Main extends Component {
   static defaultProps = {
@@ -44,31 +50,16 @@ class Main extends Component {
   };
 
   render() {
-    const pokemon = ({ match }) => {
-      let matchedPokemon = this.props.mainPokemonData.filter(
-        (p) => p.id === +match.params.id
-      )[0];
-      return (
-        <div>
-          <Pokecard
-            id={match.params.id}
-            name={matchedPokemon.name}
-            type={matchedPokemon.type}
-            exp={matchedPokemon.base_experience}
-          />
-        </div>
-      );
-    };
-
+    console.log(this.props.pokemon);
     // if /pokemon/1 is called then
     // render will be called with id == 1
     // then in render we call pokemon function and give it id 1
     return (
       <div>
-        <Pokegame pokemon={this.props.mainPokemonData} />
+        <Pokegame pokemon={this.props.pokemon.pokemons} />
       </div>
     );
   }
 }
 
-export default Main;
+export default connect(mapStateToProps)(Main);
