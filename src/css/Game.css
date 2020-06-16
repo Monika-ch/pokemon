@@ -75,7 +75,14 @@
   border-radius: 25% !important;
 }
 
-.button:hover {
+.home-button {
+  height: 80px;
+  border-radius: 25% !important;
+  margin-top: 15px;
+}
+
+.button:hover,
+.home-button:hover {
   transform: scale(1.25);
   opacity: 0.7;
   transition: all ease 500ms;
@@ -83,6 +90,10 @@
 
 .fa-home {
   font-size: 80px;
+}
+
+.home-button .fa-home {
+  font-size: 60px;
 }
 
 @media (min-width: 768px) {

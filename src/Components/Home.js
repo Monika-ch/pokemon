@@ -2,11 +2,19 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import CircleType from "circletype";
-// import { Switch, Route, Redirect } from "react-router-dom";
 import "../css/Home.css";
 import { connect } from "react-redux";
 import { getPokemonData } from "../redux/pokemonFetch";
 import PokemonCache from "../PokemonCache";
+import { fadeIn } from "react-animations";
+import { StyleSheet, css } from "aphrodite";
+import Rotate from "react-reveal/Rotate";
+
+const styles = StyleSheet.create({
+  fadeIn: {
+    animationName: fadeIn,
+  },
+});
 
 const mapDispatchToProps = {
   getPokemonData,
@@ -22,28 +30,32 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-wrapper">
         <header>
           <div className="container">
             <div className="row">
               <div className="col">
-                <h1>
+                <h1 className={css(styles.fadeIn)}>
                   Ƥ
-                  <img
-                    className="image"
-                    src={process.env.PUBLIC_URL + "/pokeball.png"}
-                    height="70"
-                    width="70"
-                    alt="Pokeball"
-                  />
+                  <Rotate bottom>
+                    <img
+                      className="image"
+                      src={process.env.PUBLIC_URL + "/pokeball.png"}
+                      height="70"
+                      width="70"
+                      alt="Pokeball"
+                    />
+                  </Rotate>
                   Ƙℯḿ
-                  <img
-                    className="image"
-                    src={process.env.PUBLIC_URL + "/pokeball.png"}
-                    height="70"
-                    width="70"
-                    alt="Pokeball"
-                  />
+                  <Rotate bottom>
+                    <img
+                      className="image"
+                      src={process.env.PUBLIC_URL + "/pokeball.png"}
+                      height="70"
+                      width="70"
+                      alt="Pokeball"
+                    />
+                  </Rotate>
                   ȵ
                 </h1>
                 <h3 className="arc">..let the battle begin</h3>

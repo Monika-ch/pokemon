@@ -471,6 +471,13 @@ class Pokegame extends Component {
           onClickButton2={this.state.modalState.onButtonClick2}
         />
         <div className="container-fluid">
+          <div className="row justify-content-center">
+            <Link to="/">
+              <Button size="lg" color="success" className="home-button">
+                <i className="fa fa-home fa-lg" />
+              </Button>
+            </Link>
+          </div>
           <div className="row">
             <div className="col-3">
               <div className="CompleteSet-1 mt-auto">
@@ -482,16 +489,14 @@ class Pokegame extends Component {
 
               <div className="scorelist-wrapper">
                 <div className="container">
-                  <div className="mb-4 center-me d-flex">
-                    <div className="ScoreList row m-auto">
-                      <ScoreList
-                        isComputer={false}
-                        pokemon={this.state.playerHand}
-                        exp={exp2}
-                      />
-                    </div>
+                  <div className="ScoreList row m-auto">
+                    <ScoreList
+                      isComputer={false}
+                      pokemon={this.state.playerHand}
+                      exp={exp2}
+                    />
                   </div>
-
+                  <br />
                   <div className="ScoreList row m-auto">
                     <ScoreList
                       isComputer={true}
@@ -516,14 +521,6 @@ class Pokegame extends Component {
               </div>
               <div id="ComputerMoveDetail">{this.state.computerLastMove}</div>
               {/* </div> */}
-            </div>
-
-            <div>
-              <Link to="/">
-                <Button size="lg" color="success" className="button">
-                  <i className="fa fa-home fa-lg" />
-                </Button>
-              </Link>
             </div>
 
             <div className="col-9 m-auto">

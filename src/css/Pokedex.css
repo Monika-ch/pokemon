@@ -32,7 +32,7 @@
 }
 
 .border-me {
-  border-left: 1px rgba(169, 169, 169, 0.4) solid;
+  border-left: 1px rgba(169, 169, 169) solid;
 }
 
 .CardSelected {
@@ -59,11 +59,11 @@
 }
 
 .PlayerMove {
-  color: green;
+  color: rgb(17, 50, 122);
   font-family: 'Handlee', cursive;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-left: 50px;
 }
 
