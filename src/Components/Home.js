@@ -23,7 +23,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div />
         <header>
           <div className="container">
             <div className="row">
@@ -61,21 +60,13 @@ class Home extends Component {
               </div>
               <div className="col-12">
                 <Link to="/pokemon">
-                  <button
-                    outline
-                    color="danger"
-                    className="mt-md-2 p-2 col-md-6 col-8 all-btn btn1"
-                  >
+                  <button className="mt-md-1 p-2 col-md-6 col-8 all-btn btn1">
                     vs Computer
                   </button>
                 </Link>
                 <br />
                 <Link to="/friendgame">
-                  <button
-                    outline
-                    color="warning"
-                    className="mt-md-3 p-2 col-md-6 col-8 all-btn btn2"
-                  >
+                  <button className="mt-md-3 p-2 col-md-6 col-8 all-btn btn2">
                     vs A Friend
                   </button>
                 </Link>

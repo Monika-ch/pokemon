@@ -73,9 +73,9 @@ header h3 {
 .battleCard {
   background: #000428;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(200deg, #004e92, #000428);
+  background: -webkit-linear-gradient(290deg, #004e92, #000428);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(135deg, #004e92, #000428);
+  background: linear-gradient(60deg, #004e92, #000428);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 80px auto;
   height: 320px;
@@ -88,10 +88,10 @@ header h3 {
   text-align: center;
   border-radius: 15px;
   border: 5px ridge #004e92;
-  background-size: 200% 200%;
+  background-size: 300% 300%;
   position: relative;
-  animation: change1 5s ease-out infinite;
-  -webkit-animation: change1 5s ease-out infinite;
+  animation: change 2s ease-out infinite;
+  -webkit-animation: change1 2s ease-out infinite;
 }
 
 @keyframes change1 {
@@ -109,7 +109,7 @@ header h3 {
 }
 
 .battleCard h5 {
-  margin-top: 45px;
+  margin-top: 25px;
   margin-bottom: 25px;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -144,20 +144,6 @@ header h3 {
   border: none;
   left: -10px;
 }
-
-/* .button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-} */
 
 .all-btn span {
   position: relative;
