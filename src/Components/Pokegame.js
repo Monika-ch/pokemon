@@ -19,6 +19,7 @@ const pointsToWinGame = 1600;
 const completedSetCountToWinGame = 3;
 const cardCoundNeededToCompleteSet = 3;
 const maxCardInDeck = 7;
+const baseUrl = "/pokemon";
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -572,7 +573,7 @@ class Pokegame extends Component {
         {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
           Redirect needs to be part of render function. It doesn't matter where it is put in html as we are moving away from this page
           Also read tutorial on conditional rendering: https://reactjs.org/docs/conditional-rendering.html*/}
-        {this.state.isRedirect && <Redirect to="/" />}
+        {this.state.isRedirect && <Redirect to={baseUrl + "/"} />}
       </div>
     );
   }
