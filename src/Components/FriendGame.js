@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function FriendGame(props) {
   return (
     <React.Fragment>
-      <div className="content-wrapper">
+      <div className="friend-wrapper">
         <Link to="/">
           <Button size="lg" color="success" className="button">
             <i className="fa fa-home fa-lg" />

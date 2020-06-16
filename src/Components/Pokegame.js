@@ -489,7 +489,7 @@ class Pokegame extends Component {
 
               <div className="scorelist-wrapper">
                 <div className="container">
-                  <div className="ScoreList row m-auto">
+                  <div className="ScoreList row">
                     <ScoreList
                       isComputer={false}
                       pokemon={this.state.playerHand}
@@ -497,7 +497,7 @@ class Pokegame extends Component {
                     />
                   </div>
                   <br />
-                  <div className="ScoreList row m-auto">
+                  <div className="ScoreList row">
                     <ScoreList
                       isComputer={true}
                       pokemon={this.state.computerHand}

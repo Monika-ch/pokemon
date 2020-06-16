@@ -1,14 +1,9 @@
-/* .bg {
-    background: #FDC830;
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);
-    background: linear-gradient(to right, #F37335, #FDC830);
-} */
-
-/* .outermost-wrapper {
-  background: #FDC830;
-  background: -webkit-linear-gradient(to right, #F37335, #FDC830);
-  background: linear-gradient(to right, #F37335, #FDC830);
-} */
+.friend-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
 .card-coming-soon {
   height: 450px;
