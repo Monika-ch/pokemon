@@ -136,6 +136,10 @@ header h3 {
   left: -10px;
 }
 
+.all-btn:active {
+  outline: none;
+}
+
 .all-btn span {
   position: relative;
   transition: 0.5s;
