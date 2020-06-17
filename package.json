@@ -16,7 +16,6 @@
     "gh-pages": "^2.2.0",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
-    "react-animation-components": "^3.0.0",
     "react-animations": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
@@ -31,8 +30,7 @@
     "redux": "^4.0.5",
     "redux-logger": "3.0.6",
     "redux-thunk": "2.2.0",
-    "spinner": "^0.3.4",
-    "styled-components": "^5.1.1"
+    "spinner": "^0.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
