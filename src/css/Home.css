@@ -24,8 +24,26 @@ header h1 {
   color: transparent;
   animation: moveBg 10s linear infinite;
   -webkit-animation: moveBg 10s cir infinite;
-  background-image: linear-gradient(295deg, rgba(231, 231, 231, 0.08) 0%, rgba(231, 231, 231, 0.08) 14%, rgba(224, 224, 224, 0.08) 14%, rgba(224, 224, 224, 0.08) 51%, rgba(140, 140, 140, 0.08) 51%, rgba(140, 140, 140, 0.08) 100%),
-    linear-gradient(295deg, rgba(244, 244, 244, 0.09) 0%, rgba(244, 244, 244, 0.09) 21%, rgba(158, 158, 158, 0.09) 21%, rgba(158, 158, 158, 0.09) 31%, rgba(162, 162, 162, 0.09) 31%, rgba(162, 162, 162, 0.09) 89%, rgba(115, 115, 115, 0.09) 89%, rgba(115, 115, 115, 0.09) 100%),
+  background-image: linear-gradient(
+      295deg,
+      rgba(231, 231, 231, 0.08) 0%,
+      rgba(231, 231, 231, 0.08) 14%,
+      rgba(224, 224, 224, 0.08) 14%,
+      rgba(224, 224, 224, 0.08) 51%,
+      rgba(140, 140, 140, 0.08) 51%,
+      rgba(140, 140, 140, 0.08) 100%
+    ),
+    linear-gradient(
+      295deg,
+      rgba(244, 244, 244, 0.09) 0%,
+      rgba(244, 244, 244, 0.09) 21%,
+      rgba(158, 158, 158, 0.09) 21%,
+      rgba(158, 158, 158, 0.09) 31%,
+      rgba(162, 162, 162, 0.09) 31%,
+      rgba(162, 162, 162, 0.09) 89%,
+      rgba(115, 115, 115, 0.09) 89%,
+      rgba(115, 115, 115, 0.09) 100%
+    ),
     linear-gradient(295deg, rgb(59, 53, 68), rgba(22, 0, 75, 0.973));
 }
 
@@ -46,7 +64,7 @@ header h1 {
 header h1:hover {
   transform: scale(1.1);
   opacity: 0.9;
-  transition: all ease 500ms;
+  transition: all ease 1s;
 }
 
 header .image {
@@ -110,7 +128,6 @@ header h3 {
   border-radius: 4px;
   box-shadow: -17px 10px 12px -5px rgba(0, 0, 0, 0.56);
   transition: all 0.5s;
-
 }
 
 .battleCard h5:hover {
@@ -125,7 +142,6 @@ header h3 {
   border-radius: 10px;
   border: 1px solid;
   letter-spacing: 0.8px;
-  transition: all 0.5s;
 }
 
 .all-btn:hover {
@@ -151,30 +167,40 @@ header h3 {
 }
 
 .btn1 {
-  color: rgb(0, 255, 0)
+  color: rgb(0, 255, 0);
+}
+
+.btn1:hover {
+  color: cyan;
 }
 
 .btn2 {
-  color: yellow
+  color: yellow;
+}
+
+.btn2:hover {
+  color: pink;
 }
 
 .game-rules {
   color: white;
 }
 
+.game-rules:hover {
+  color: salmon;
+}
+
 .game-rules:hover span {
-  padding-right: 25px;
-  color: rgb(255, 72, 0);
+  padding-right: 30px;
 }
 
 .game-rules span:after {
-  content: '>>';
+  content: ">>";
   font-size: 1.25rem;
   position: absolute;
   opacity: 0;
   top: -5px;
   right: -20px;
-  transition: 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -183,7 +209,6 @@ header h3 {
     margin: 10px;
     padding-top: 50px;
     margin-top: 33%;
-
   }
 
   .image {
@@ -199,7 +224,7 @@ header h3 {
     height: 300px;
     width: 260px;
     box-shadow: 22px 20px 30px -2px rgba(0, 0, 0, 0.56);
-    opacity: .97;
+    opacity: 0.97;
     border: 10px outset #004e92;
     border-radius: 60px;
   }
@@ -210,12 +235,12 @@ header h3 {
     border-radius: 20px;
     margin-top: 27px;
     margin-bottom: 12px;
-    opacity: .95;
+    opacity: 0.95;
   }
 
   .all-btn {
     font-size: 12px;
-    margin-top: .75rem;
+    margin-top: 0.75rem;
     border-radius: 5px;
   }
 }

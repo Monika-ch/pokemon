@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import CircleType from "circletype";
 import "../css/Home.css";
@@ -9,12 +8,15 @@ import PokemonCache from "../PokemonCache";
 import { fadeIn } from "react-animations";
 import { StyleSheet, css } from "aphrodite";
 import Rotate from "react-reveal/Rotate";
+import Fade from "react-reveal/Fade";
 
-const styles = StyleSheet.create({
-  fadeIn: {
-    animationName: fadeIn,
-  },
-});
+// const styles = StyleSheet.create({
+//   fadeIn: {
+//     animationName: fadeIn,
+//     animationDuration: "5s",
+//     animationIterationCount: "1",
+//   },
+// });
 
 const mapDispatchToProps = {
   getPokemonData,
@@ -35,9 +37,11 @@ class Home extends Component {
           <div className="container">
             <div className="row">
               <div className="col">
-                <h1 className={css(styles.fadeIn)}>
+                {/* <Fade left cascade duration={2500} delay={1000}> */}
+                {/* <h1 className={css(styles.fadeIn)}> */}
+                <h1>
                   Ƥ
-                  <Rotate bottom>
+                  <Rotate bottom duration={2500} delay={100}>
                     <img
                       className="image"
                       src={process.env.PUBLIC_URL + "/pokeball.png"}
@@ -47,7 +51,7 @@ class Home extends Component {
                     />
                   </Rotate>
                   Ƙℯḿ
-                  <Rotate bottom>
+                  <Rotate bottom duration={2500} delay={100}>
                     <img
                       className="image"
                       src={process.env.PUBLIC_URL + "/pokeball.png"}
@@ -58,6 +62,7 @@ class Home extends Component {
                   </Rotate>
                   ȵ
                 </h1>
+                {/* </Fade> */}
                 <h3 className="arc">..let the battle begin</h3>
               </div>
             </div>
