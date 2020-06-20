@@ -1,12 +1,11 @@
 .DiscardCard {
-  width: 165px;
-  height: 223px;
-  padding: 10px 20px;
+  width: 150px;
+  height: 203px;
+  padding: 7px 20px;
   margin: 1rem;
   color: rgb(255, 255, 255);
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
   text-align: center;
-  /* background: rgba(156, 168, 146, 0.8); */
   background: rgb(107, 119, 107);
   border-radius: 3px;
   border: 1.5px ridge rgba(0, 0, 0, 0.2);
@@ -24,10 +23,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110px;
+  height: 100px;
   background-color: #eceff1;
   border-radius: 3px;
-  margin-bottom: 1rem;
+  margin-bottom: .7rem;
   margin-top: 0.3rem;
   border: 1.5px ridge #6464646c;
   box-shadow: -17px 5px 13px -5px #616d60;
@@ -35,7 +34,7 @@
 }
 
 .DiscardCard-data {
-  font-size: 85%;
+  font-size: 80%;
   text-transform: capitalize;
   font-family: "Handlee", cursive;
   letter-spacing: 0.5px;

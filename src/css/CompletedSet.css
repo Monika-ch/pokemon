@@ -18,8 +18,8 @@
 } */
 
 .CompletedSet-content {
-  height: 50px;
-  width: 75px;
+  height: 40px;
+  width: 65px;
   margin: .2rem;
   font-family: 'Annie Use Your Telescope', cursive;
   font-weight: bold;
@@ -28,7 +28,7 @@
   text-transform: uppercase;
   text-align: center;
   background-color: #abb89e;
-  padding-top: .85rem;
+  padding-top: .5rem;
   border-radius: 3px;
   border: 1px ridge rgba(0, 0, 0, 0.2);
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);

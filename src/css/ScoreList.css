@@ -2,8 +2,8 @@
 
 .ScoreList {
     box-sizing: border-box;
-    width: 200px;
-    height: 290px;
+    width: 165px;
+    height: 250px;
     box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
     background: #b00020;
     /*linear-gradient(to right, #ff512f, #dd2476); #b00020; rgb(20, 41, 224)*/
@@ -15,10 +15,10 @@
 
 .ScoreList-title {
     font-family: "Piedra", cursive;
-    margin: 1rem 0;
+    margin: .7rem 0;
     color: white;
     font-weight: 100;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -27,11 +27,11 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 180px;
-    width: 150px;
+    height: 150px;
+    width: 130px;
     background-color: #cc0025;
     border-radius: 3px;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     padding-top: 16px;
     border: 1px ridge rgba(0, 0, 0, 0.1);
     box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
@@ -40,7 +40,7 @@
 .ScoreList-data {
     font-family: 'Annie Use Your Telescope',
         cursive;
-    font-size: 90%;
+    font-size: 85%;
     font-weight: bold;
     color: white;
     /* color: rgb(245, 229, 229); */
@@ -55,7 +55,7 @@
 }
 
 ul {
-    margin-left: -12.5%;
+    margin-left: -17.5%;
 }
 
 .count {
@@ -72,7 +72,7 @@ ul {
 
 .Score h6 {
     font-weight: 600;
-    font-size: 85%;
+    font-size: 75%;
 }
 
 .Score .scoreCount {

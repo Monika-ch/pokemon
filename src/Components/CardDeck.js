@@ -7,7 +7,7 @@ export default class CardDeck extends Component {
       <div>
         <div className="CardDeck" onClick={this.props.onDeckClick}>
           <div className="CardDeck-image">
-            <img src="pokeball.png" width="105" alt="Pokeball" />
+            <img src="pokeball.png" width="76" alt="Pokeball" />
           </div>
           <h5 className="CardDeck-title">Card ~ Deck</h5>
         </div>

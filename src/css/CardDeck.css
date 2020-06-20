@@ -1,5 +1,5 @@
 .CardDeck {
-  width: 165px;
+  width: 150px;
   padding: 10px;
   margin: 1rem;
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 145px;
+  height: 125px;
   background-color: rgb(86, 94, 93);
   border-radius: 5px;
   margin-bottom: 1rem;

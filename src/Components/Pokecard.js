@@ -17,7 +17,7 @@ class Pokecard extends Component {
     let name = this.props.name;
     let type = this.props.type;
     let exp = this.props.exp;
-    let width = 100;
+    let width = 95;
 
     if (this.props.usedAs === "ComputerCardUage") {
       imgSrc = "team-rocket.png";

@@ -11,8 +11,16 @@
   flex-wrap: wrap;
 }
 
+.main-content {
+  width: 100vw;
+}
+
+.left-wrapper {
+  margin-top: -50px;
+}
+
 .scorelist-wrapper {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .scorelist-wrapper .container {
@@ -22,18 +30,12 @@
 
 .game-wrapper {
   height: 100%;
-  width: 100vw;
+  width: 100%;
   outline: none;
 }
 
 .CompleteSet-1 {
-  margin-top: 30px;
-  margin-bottom: 150px;
-}
-
-.CompleteSet-1 {
-  margin-top: 80px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .border-me {
@@ -59,24 +61,24 @@
   font-family: 'Handlee', cursive;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-left: 50px;
+  margin-top: 10px;
+  margin-left: 15px;
 }
 
 .PlayerMove {
   color: rgb(17, 50, 122);
   font-family: 'Handlee', cursive;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 25px;
-  margin-left: 50px;
+  margin-top: 15px;
+  margin-left: 12px;
 }
 
 #ComputerMoveDetail {
   color: darkred;
   font-family: 'Handlee',
     cursive;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 5px;
-  margin-left: 60px;
+  margin-left: 20px;
 }

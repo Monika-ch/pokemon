@@ -474,13 +474,13 @@ class Pokegame extends Component {
           <div className="row justify-content-center">
             <Link to="/">
               <Button size="lg" color="success" className="home-button">
-                <i className="fa fa-home fa-lg" />
+                <i className="fa fa-home" />
               </Button>
             </Link>
           </div>
-          <div className="row">
-            <div className="col-3">
-              <div className="CompleteSet-1 mt-auto">
+          <div className="row main-content">
+            <div className="col-lg-2 col-md-3 col-5 left-wrapper">
+              <div className="CompleteSet-1">
                 <CompletedSet
                   pokemon={this.state.completedSetPlayer}
                   // pokemon={this.state.computerHand}
@@ -523,7 +523,7 @@ class Pokegame extends Component {
               {/* </div> */}
             </div>
 
-            <div className="col-9 m-auto">
+            <div className="col-lg-10 col-md-9 col-7 ">
               <div className="container-fluid border-me">
                 <div className="row center-me">
                   <Pokedex
