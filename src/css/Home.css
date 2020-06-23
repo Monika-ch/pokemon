@@ -22,15 +22,15 @@ header h1 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  animation: moveBg 10s linear infinite;
-  -webkit-animation: moveBg 10s cir infinite;
+  animation: moveBg 3s ease-in-out infinite;
+  -webkit-animation: moveBg 3s cir infinite;
   background-image: linear-gradient(295deg,
       rgba(231, 231, 231, 0.08) 0%,
       rgba(231, 231, 231, 0.08) 14%,
       rgba(224, 224, 224, 0.08) 14%,
       rgba(224, 224, 224, 0.08) 51%,
       rgba(140, 140, 140, 0.08) 51%,
-      rgba(140, 140, 140, 0.08) 100%),
+      rgba(182, 169, 169, 0.55) 100%),
     linear-gradient(295deg,
       rgba(244, 244, 244, 0.09) 0%,
       rgba(244, 244, 244, 0.09) 21%,
@@ -39,7 +39,7 @@ header h1 {
       rgba(162, 162, 162, 0.09) 31%,
       rgba(162, 162, 162, 0.09) 89%,
       rgba(115, 115, 115, 0.09) 89%,
-      rgba(115, 115, 115, 0.09) 100%),
+      rgba(221, 0, 0, 0.09) 100%),
     linear-gradient(295deg, rgb(59, 53, 68), rgba(22, 0, 75, 0.973));
 }
 
@@ -73,6 +73,24 @@ header h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
   font-family: "Amatic SC", cursive;
+  animation: h3 10s;
+}
+
+@keyframes h3 {
+  from {
+    color: cyan;
+  }
+
+  to {
+    color: blue;
+  }
+}
+
+header h3:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  transition: all ease 1s;
+  color: rgba(255, 0, 170, 0.808);
 }
 
 .battleCard {
@@ -146,6 +164,29 @@ header h3 {
   box-shadow: 17px 0 1px 1px inset, 17px 0 1px 0;
   border: none;
   left: -10px;
+  animation: example 3s infinite;
+}
+
+@keyframes example {
+  0% {
+    color: magenta;
+  }
+
+  20% {
+    color: yellow;
+  }
+
+  40% {
+    color: cyan;
+  }
+
+  80% {
+    color: violet;
+  }
+
+  100% {
+    color: orange;
+  }
 }
 
 .all-btn:active {
@@ -166,24 +207,12 @@ header h3 {
   color: rgb(0, 255, 0);
 }
 
-.btn1:hover {
-  color: cyan;
-}
-
 .btn2 {
   color: yellow;
 }
 
-.btn2:hover {
-  color: pink;
-}
-
 .game-rules {
   color: white;
-}
-
-.game-rules:hover {
-  color: salmon;
 }
 
 .game-rules:hover span {
