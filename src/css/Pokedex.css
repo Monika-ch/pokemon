@@ -50,11 +50,12 @@
   width: 300px;
   height: 200px;
   border-radius: 5px;
+  margin-top: 15% !important;
 }
 
 .ComputerMove {
   color: darkred;
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   font-size: 22px;
   font-weight: bold;
   margin-top: 10px;
@@ -63,7 +64,7 @@
 
 .PlayerMove {
   color: rgb(17, 50, 122);
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
@@ -72,8 +73,7 @@
 
 #ComputerMoveDetail {
   color: darkred;
-  font-family: 'Handlee',
-    cursive;
+  font-family: "Handlee", cursive;
   font-size: 16px;
   margin-top: 5px;
   margin-left: 20px;

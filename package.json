@@ -21,6 +21,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-loading-overlay": "^1.0.1",
+    "react-loadingg": "^1.7.2",
     "react-popper": "^2.2.3",
     "react-redux": "5.0.7",
     "react-reveal": "^1.2.2",

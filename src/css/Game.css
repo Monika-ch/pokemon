@@ -26,6 +26,10 @@
   box-shadow: 2px 10px 12px -2px rgba(0, 0, 0, 0.56);
 }
 
+.card-coming-soon h4:hover {
+  color: rgb(184, 11, 112);
+}
+
 .card-coming-soon .col-8 {
   background-image: linear-gradient(289deg, rgba(131, 131, 131, 0.07) 0%, rgba(131, 131, 131, 0.07) 17%, rgba(142, 142, 142, 0.07) 17%, rgba(142, 142, 142, 0.07) 30%, rgba(32, 32, 32, 0.07) 30%, rgba(32, 32, 32, 0.07) 63%, rgba(179, 179, 179, 0.07) 63%, rgba(179, 179, 179, 0.07) 76%, rgba(134, 134, 134, 0.07) 76%, rgba(134, 134, 134, 0.07) 100%),
     linear-gradient(199deg, rgba(86, 86, 86, 0.05) 0%, rgba(86, 86, 86, 0.05) 77%, rgba(27, 27, 27, 0.05) 77%, rgba(27, 27, 27, 0.05) 78%, rgba(200, 200, 200, 0.05) 78%, rgba(200, 200, 200, 0.05) 98%, rgba(91, 91, 91, 0.05) 98%, rgba(91, 91, 91, 0.05) 100%),
@@ -53,11 +57,19 @@
   font-family: 'Handlee', cursive;
 }
 
+.card-coming-soon h6:hover {
+  color: rgb(184, 11, 11);
+}
+
 .card-coming-soon p {
   padding: 0 20px 5px 20px;
   color: rgb(103, 46, 110);
   font-size: 1.1rem;
   font-family: 'Handlee', cursive;
+}
+
+.card-coming-soon p:hover {
+  color: rgb(104, 0, 117);
 }
 
 .card-coming-soon .col-8:hover {
@@ -68,12 +80,14 @@
 .button {
   height: 100px;
   border-radius: 25% !important;
+  box-shadow: -25px 15px 12px -5px rgba(0, 0, 0, 0.6);
 }
 
 .home-button {
   height: 50px;
   border-radius: 50% !important;
   margin-top: 8px;
+  box-shadow: -10px 10px 12px -5px rgba(0, 0, 0, 0.6);
 }
 
 .button:hover,

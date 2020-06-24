@@ -8,13 +8,15 @@ import { Redirect } from "react-router-dom";
 import ScoreList from "./ScoreList";
 import "../css/Pokedex.css";
 import LoadingOverlay from "react-loading-overlay";
+import BounceLoader from "react-spinners/BounceLoader";
+import { EatLoading, SemipolarLoading } from "react-loadingg";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Prompt } from "react-router";
 import { connect } from "react-redux";
 
 // CONSTANTS DEFINED HERE
-const timeForComputerMove = 1500;
+const timeForComputerMove = 1200;
 const pointsToWinGame = 1600;
 const completedSetCountToWinGame = 3;
 const cardCoundNeededToCompleteSet = 3;
@@ -131,7 +133,9 @@ class Pokegame extends Component {
       computerHand.push(randPokemon);
     }
 
-    let shouldRedirect = !computerHand || !computerHand.length;
+    // let shouldRedirect = !computerHand || !computerHand.length;
+
+    let shouldRedirect = false;
 
     // for first time this.state = is necessary.
     // its like using a variable for first time, let x is necessary.
@@ -450,12 +454,17 @@ class Pokegame extends Component {
 
     return (
       <div className="game-wrapper" tabIndex="0" onKeyUp={this.showRules}>
-        <LoadingOverlay
-          active={!this.state.isPlayerTurn}
-          spinner
-          text={"Computer's Move . . ."}
-        />
-        <LoadingOverlay active={this.props.isPokemonLoading} spinner />
+        <div className="loading-overlay">
+          <LoadingOverlay
+            active={!this.state.isPlayerTurn}
+            text="Computer's Move . . ."
+            spinner
+          />
+        </div>
+
+        <div hidden={!this.props.isPokemonLoading}>
+          <SemipolarLoading />
+        </div>
         <Prompt
           when={!this.state.gameOver}
           message="Are you sure you want to leave the Poke-battle?"
@@ -471,14 +480,14 @@ class Pokegame extends Component {
           onClickButton2={this.state.modalState.onButtonClick2}
         />
         <div className="container-fluid">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-md-5">
             <Link to="/">
-              <Button size="lg" color="success" className="home-button">
+              <Button size="lg" color="success" className="home-button mb-lg-4">
                 <i className="fa fa-home" />
               </Button>
             </Link>
           </div>
-          <div className="row main-content">
+          <div className="row main-content mt-md-5">
             <div className="col-lg-2 col-md-3 col-5 left-wrapper">
               <div className="CompleteSet-1">
                 <CompletedSet
