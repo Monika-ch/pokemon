@@ -4,19 +4,6 @@
   justify-content: center;
 }
 
-/* .CompletedSet {
-  box-sizing: border-box;
-  width: 90px;
-  height: 80px;
-  border-radius: 3px;
-  margin: .5rem;
-  background: #4bb1cf;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
-} */
-
 .CompletedSet-content {
   height: 40px;
   width: 65px;
@@ -29,7 +16,7 @@
   text-align: center;
   background-color: #abb89e;
   padding-top: .5rem;
-  border-radius: 3px;
+  border-radius: 7px;
   border: 1px ridge rgba(0, 0, 0, 0.2);
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
 }

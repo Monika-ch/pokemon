@@ -4,13 +4,10 @@ import CircleType from "circletype";
 import "../css/Home.css";
 import { connect } from "react-redux";
 import { getPokemonData } from "../redux/pokemonFetch";
-import PokemonCache from "../PokemonCache";
 import { fadeInDown, fadeInUp } from "react-animations";
 import { StyleSheet, css } from "aphrodite";
 import Rotate from "react-reveal/Rotate";
-import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
 
 const styles = StyleSheet.create({
   fadeInDown: {
@@ -43,7 +40,6 @@ class Home extends Component {
             <div className="row">
               <div className="col">
                 <div className={css(styles.fadeInDown)}>
-                  {/* <h1 className={css(styles.fadeIn)}> */}
                   <h1>
                     Ƥ
                     <Rotate bottom duration={4000}>

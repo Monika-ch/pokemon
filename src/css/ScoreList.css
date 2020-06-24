@@ -6,8 +6,7 @@
     height: 250px;
     box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
     background: #b00020;
-    /*linear-gradient(to right, #ff512f, #dd2476); #b00020; rgb(20, 41, 224)*/
-    border-radius: 3px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +29,7 @@
     height: 162px;
     width: 130px;
     background-color: #cc0025;
-    border-radius: 3px;
+    border-radius: 10px;
     margin-bottom: .5rem;
     padding-top: 16px;
     border: 1px ridge rgba(0, 0, 0, 0.1);
@@ -43,7 +42,6 @@
     font-size: 88%;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    /* color: rgb(245, 229, 229); */
     letter-spacing: .7px;
     text-transform: uppercase;
 }
@@ -96,19 +94,3 @@ ul {
 .row {
     margin: 0 !important;
 }
-
-
-/* font-family: 'Amatic SC',
-cursive;
-font-family: 'Annie Use Your Telescope',
-cursive;
-font-family: 'Handlee',
-cursive;
-font-family: 'Orbitron',
-sans-serif;
-font-family: 'Philosopher',
-sans-serif;
-font-family: 'Piedra',
-cursive;
-font-family: 'Special Elite',
-cursive; */

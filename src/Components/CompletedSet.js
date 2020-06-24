@@ -16,15 +16,13 @@ export default class CompletedSet extends Component {
   render() {
     return (
       <div className="CompletedSet-wrapper">
-        {getOnePerType(this.props.pokemon)
-          // .splice(0, 5)
-          .map((pokemon) => (
-            <div className="CompletedSet">
-              <div className="CompletedSet-content">
-                <div id={pokemon.id}>{pokemon.type}</div> <br />
-              </div>
+        {getOnePerType(this.props.pokemon).map((pokemon) => (
+          <div className="CompletedSet">
+            <div className="CompletedSet-content">
+              <div id={pokemon.id}>{pokemon.type}</div> <br />
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     );
   }

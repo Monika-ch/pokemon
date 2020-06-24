@@ -7,8 +7,17 @@
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
   text-align: center;
   background: rgb(107, 119, 107);
-  border-radius: 3px;
+  border-radius: 30px;
   border: 1.5px ridge rgba(0, 0, 0, 0.2);
+}
+
+.DiscardCard:hover {
+  border-radius: 3px;
+}
+
+.DiscardCard:active {
+  width: 170px;
+  margin-top: .7rem;
 }
 
 .DiscardCard-title {
@@ -25,7 +34,7 @@
   align-items: center;
   height: 100px;
   background-color: #eceff1;
-  border-radius: 3px;
+  border-radius: 12px;
   margin-bottom: .7rem;
   margin-top: 0.3rem;
   border: 1.5px ridge #6464646c;

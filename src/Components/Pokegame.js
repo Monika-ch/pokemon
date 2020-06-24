@@ -18,9 +18,9 @@ import Fade from "react-reveal/Fade";
 
 // CONSTANTS DEFINED HERE
 const timeForComputerMove = 1200;
-const pointsToWinGame = 1600;
-const completedSetCountToWinGame = 3;
-const cardCoundNeededToCompleteSet = 3;
+const pointsToWinGame = 3000;
+const completedSetCountToWinGame = 5;
+const cardCoundNeededToCompleteSet = 4;
 const maxCardInDeck = 7;
 
 function getRandom(arr, n) {
@@ -135,8 +135,6 @@ class Pokegame extends Component {
     }
 
     let shouldRedirect = !computerHand || !computerHand.length;
-
-    // let shouldRedirect = false;
 
     // for first time this.state = is necessary.
     // its like using a variable for first time, let x is necessary.
@@ -268,7 +266,7 @@ class Pokegame extends Component {
   swapDiscardCard = (id, isComputer = false) => {
     if (this.canMakeMove() === false) return;
     console.log("swap discard card..............", id, isComputer);
-    if (this.state.discardedCard.id == -1) {
+    if (this.state.discardedCard.id === -1) {
       return;
     }
     let selectedCard = this.state.discardedCard;
@@ -454,155 +452,156 @@ class Pokegame extends Component {
     };
 
     return (
-      <Fade cascade duration={500}>
-        <div className="game-wrapper" tabIndex="0" onKeyUp={this.showRules}>
-          <LoadingOverlay
-            active={!this.state.isPlayerTurn}
-            text="Computer's Move . . ."
-            spinner
-          />
+      <div>
+        <Prompt
+          when={!this.state.gameOver}
+          message="Are you sure you want to leave the Poke-battle?"
+        />
+        <Fade cascade duration={500}>
+          <div className="game-wrapper" tabIndex="0" onKeyUp={this.showRules}>
+            <LoadingOverlay
+              active={!this.state.isPlayerTurn}
+              text="Computer's Move . . ."
+              spinner
+            />
 
-          <div hidden={!this.props.isPokemonLoading}>
-            <SemipolarLoading />
-          </div>
-          <Prompt
-            when={!this.state.gameOver}
-            message="Are you sure you want to leave the Poke-battle?"
-          />
+            <div hidden={!this.props.isPokemonLoading}>
+              <SemipolarLoading />
+            </div>
 
-          <PokeModal
-            isModalOpen={this.state.modalState.isModalOpen}
-            modalTitle={this.state.modalState.modalTitle}
-            modalContent={this.state.modalState.modalContent}
-            modalButton1={this.state.modalState.modalButton1}
-            onClickButton1={this.state.modalState.onButtonClick1}
-            modalButton2={this.state.modalState.modalButton2}
-            onClickButton2={this.state.modalState.onButtonClick2}
-          />
-          <Fade cascade duration={500} delay={500}>
-            <div className="container-fluid">
-              <Roll bottom duration={2200} delay={2000}>
-                <div className="row justify-content-center mb-md-5">
-                  <Link to="/">
-                    <Button
-                      size="lg"
-                      color="success"
-                      className="home-button mb-lg-4"
-                    >
-                      <i className="fa fa-home" />
-                    </Button>
-                  </Link>
-                </div>
-              </Roll>
+            <PokeModal
+              isModalOpen={this.state.modalState.isModalOpen}
+              modalTitle={this.state.modalState.modalTitle}
+              modalContent={this.state.modalState.modalContent}
+              modalButton1={this.state.modalState.modalButton1}
+              onClickButton1={this.state.modalState.onButtonClick1}
+              modalButton2={this.state.modalState.modalButton2}
+              onClickButton2={this.state.modalState.onButtonClick2}
+            />
+            <Fade cascade duration={500} delay={500}>
+              <div className="container-fluid">
+                <Roll bottom duration={2200} delay={2000}>
+                  <div className="row justify-content-center mb-md-5">
+                    <Link to="/">
+                      <Button
+                        size="lg"
+                        color="success"
+                        className="home-button mb-lg-4"
+                      >
+                        <i className="fa fa-home" />
+                      </Button>
+                    </Link>
+                  </div>
+                </Roll>
 
-              <div className="row main-content mt-md-5">
-                <Fade right cascade duration={2200} delay={500}>
-                  <div className="col-lg-2 col-md-3 col-5 left-wrapper">
-                    <div className="CompleteSet-1">
-                      <CompletedSet
-                        pokemon={this.state.completedSetPlayer}
-                        // pokemon={this.state.computerHand}
-                      />
+                <div className="row main-content mt-md-5">
+                  <Fade right cascade duration={2200} delay={500}>
+                    <div className="col-lg-2 col-md-3 col-5 left-wrapper">
+                      <div className="CompleteSet-1">
+                        <CompletedSet
+                          pokemon={this.state.completedSetPlayer}
+                          // pokemon={this.state.computerHand}
+                        />
+                      </div>
+
+                      <div className="scorelist-wrapper">
+                        <div className="container">
+                          <div className="ScoreList row">
+                            <ScoreList
+                              isComputer={false}
+                              pokemon={this.state.playerHand}
+                              exp={exp2}
+                            />
+                          </div>
+                          <br />
+                          <div className="ScoreList row">
+                            <ScoreList
+                              isComputer={true}
+                              pokemon={this.state.computerHand}
+                              exp={exp1}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="CompleteSet-2">
+                        <CompletedSet
+                          pokemon={this.state.completedSetComputer}
+                          // pokemon={this.state.computerHand}
+                        />
+                      </div>
+                      <div
+                        hidden={!this.state.isPlayerTurn}
+                        id="PlayerMoveText"
+                        className="PlayerMove"
+                      >
+                        Player's Move . . .
+                      </div>
+                      <div id="ComputerMoveDetail">
+                        {this.state.computerLastMove}
+                      </div>
+                      {/* </div> */}
                     </div>
+                  </Fade>
 
-                    <div className="scorelist-wrapper">
-                      <div className="container">
-                        <div className="ScoreList row">
-                          <ScoreList
-                            isComputer={false}
-                            pokemon={this.state.playerHand}
+                  <Fade left cascade duration={1600} delay={500}>
+                    <div className="col-lg-10 col-md-9 col-7 ">
+                      <div className="container-fluid border-me">
+                        <div className="row center-me">
+                          <Pokedex
+                            pokemon={this.filterCompletedSet(
+                              this.state.playerHand,
+                              this.state.completedSetPlayer
+                            )}
+                            onClick={onclick}
                             exp={exp2}
                           />
                         </div>
-                        <br />
-                        <div className="ScoreList row">
-                          <ScoreList
-                            isComputer={true}
-                            pokemon={this.state.computerHand}
-                            exp={exp1}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="CompleteSet-2">
-                      <CompletedSet
-                        pokemon={this.state.completedSetComputer}
-                        // pokemon={this.state.computerHand}
-                      />
-                    </div>
-                    <div
-                      hidden={!this.state.isPlayerTurn}
-                      id="PlayerMoveText"
-                      className="PlayerMove"
-                    >
-                      Player's Move . . .
-                    </div>
-                    <div id="ComputerMoveDetail">
-                      {this.state.computerLastMove}
-                    </div>
-                    {/* </div> */}
-                  </div>
-                </Fade>
 
-                <Fade left cascade duration={1600} delay={500}>
-                  <div className="col-lg-10 col-md-9 col-7 ">
-                    <div className="container-fluid border-me">
-                      <div className="row center-me">
-                        <Pokedex
-                          pokemon={this.filterCompletedSet(
-                            this.state.playerHand,
-                            this.state.completedSetPlayer
-                          )}
-                          onClick={onclick}
-                          exp={exp2}
-                        />
-                      </div>
-
-                      <div className="row center-me">
-                        <div
-                          className={
-                            this.state.selectedCard != null
-                              ? " CardSelected"
-                              : ""
-                          }
-                        >
-                          <DiscardCard
-                            id={this.state.discardedCard.id}
-                            type={this.state.discardedCard.type}
-                            name={this.state.discardedCard.name}
-                            base_experience={
-                              this.state.discardedCard.base_experience
+                        <div className="row center-me">
+                          <div
+                            className={
+                              this.state.selectedCard != null
+                                ? " CardSelected"
+                                : ""
                             }
-                            onClick={this.swapDiscardCard}
+                          >
+                            <DiscardCard
+                              id={this.state.discardedCard.id}
+                              type={this.state.discardedCard.type}
+                              name={this.state.discardedCard.name}
+                              base_experience={
+                                this.state.discardedCard.base_experience
+                              }
+                              onClick={this.swapDiscardCard}
+                            />
+                          </div>
+                          <CardDeck onDeckClick={onDeckClick} />
+                        </div>
+
+                        <div className="row center-me">
+                          <Pokedex
+                            pokemon={this.filterCompletedSet(
+                              this.state.computerHand,
+                              this.state.completedSetComputer
+                            )}
+                            exp={exp1}
+                            isComputer
+                            onClick={() => {}}
                           />
                         </div>
-                        <CardDeck onDeckClick={onDeckClick} />
-                      </div>
-
-                      <div className="row center-me">
-                        <Pokedex
-                          pokemon={this.filterCompletedSet(
-                            this.state.computerHand,
-                            this.state.completedSetComputer
-                          )}
-                          exp={exp1}
-                          isComputer
-                          onClick={() => {}}
-                        />
                       </div>
                     </div>
-                  </div>
-                </Fade>
+                  </Fade>
+                </div>
               </div>
-            </div>
-          </Fade>
-
-          {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
+            </Fade>
+          </div>
+        </Fade>
+        {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
           Redirect needs to be part of render function. It doesn't matter where it is put in html as we are moving away from this page
           Also read tutorial on conditional rendering: https://reactjs.org/docs/conditional-rendering.html*/}
-          {this.state.isRedirect && <Redirect to="/" />}
-        </div>
-      </Fade>
+        {this.state.isRedirect && <Redirect to="/" />}
+      </div>
     );
   }
 }

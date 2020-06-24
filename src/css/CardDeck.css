@@ -5,9 +5,17 @@
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
   text-align: center;
   background: #b00020d2;
-  border-radius: 3px;
+  border-radius: 30px;
   border: 1px ridge rgba(0, 0, 0, 0.2);
+}
 
+.CardDeck:hover {
+  border-radius: 3px;
+}
+
+.CardDeck:active {
+  width: 170px;
+  margin-top: .7rem;
 }
 
 .CardDeck-title {
@@ -24,7 +32,7 @@
   align-items: center;
   height: 125px;
   background-color: rgb(86, 94, 93);
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 1rem;
   border: 2px ridge #616d606c;
 }

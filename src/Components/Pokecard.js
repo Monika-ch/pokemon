@@ -9,11 +9,6 @@ const POKE_API = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
 class Pokecard extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = { animate: false };
-  }
-
   render() {
     let imgSrc = `${POKE_API}${padToThree(this.props.id)}.png`;
     let name = this.props.name;

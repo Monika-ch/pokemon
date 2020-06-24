@@ -7,8 +7,6 @@ class Pokedex extends Component {
     return (
       <Flip bottom cascade duration={1600} delay={2000}>
         <div className="Pokedex">
-          {/* {title} */}
-          {/* {playerName} */}
           <div className="Pokedex-cards">
             {this.props.pokemon.map((p) => (
               <Pokecard
