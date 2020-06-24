@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/DiscardCard.css";
+import Fade from "react-reveal/Fade";
 
 const POKE_API = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
@@ -18,23 +19,25 @@ export default class DiscardCard extends Component {
     }
 
     return (
-      <div
-        className="DiscardCard"
-        onClick={() => this.props.onClick(this.props.id)}
-      >
-        <div className="DiscardCard-data" hidden={hidePokemonDetails}>
-          Type: {this.props.type}
+      <Fade bottom left duration={2200} delay={2200}>
+        <div
+          className="DiscardCard"
+          onClick={() => this.props.onClick(this.props.id)}
+        >
+          <div className="DiscardCard-data" hidden={hidePokemonDetails}>
+            Type: {this.props.type}
+          </div>
+          <div className="DiscardCard-data" hidden={hidePokemonDetails}>
+            EXP: {this.props.base_experience}
+          </div>
+          <div className="DiscardCard-image">
+            <img src={imgSrc} alt={this.props.name} width={width} />
+          </div>
+          <h6 className="DiscardCard-title" hidden={hidePokemonDetails}>
+            {this.props.name}
+          </h6>
         </div>
-        <div className="DiscardCard-data" hidden={hidePokemonDetails}>
-          EXP: {this.props.base_experience}
-        </div>
-        <div className="DiscardCard-image">
-          <img src={imgSrc} alt={this.props.name} width={width} />
-        </div>
-        <h6 className="DiscardCard-title" hidden={hidePokemonDetails}>
-          {this.props.name}
-        </h6>
-      </div>
+      </Fade>
     );
   }
 }

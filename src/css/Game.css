@@ -27,7 +27,7 @@
 }
 
 .card-coming-soon h4:hover {
-  color: rgb(184, 11, 112);
+  color: rgb(160, 23, 103);
 }
 
 .card-coming-soon .col-8 {
@@ -58,7 +58,7 @@
 }
 
 .card-coming-soon h6:hover {
-  color: rgb(184, 11, 11);
+  color: rgb(133, 40, 40);
 }
 
 .card-coming-soon p {
@@ -69,7 +69,7 @@
 }
 
 .card-coming-soon p:hover {
-  color: rgb(104, 0, 117);
+  color: rgb(64, 0, 117);
 }
 
 .card-coming-soon .col-8:hover {
@@ -92,7 +92,7 @@
 
 .button:hover,
 .home-button:hover {
-  transform: scale(1.25);
+  transform: scale(1.2);
   opacity: 0.7;
   transition: all ease 500ms;
 }

@@ -33,3 +33,9 @@
   border: 1px ridge rgba(0, 0, 0, 0.2);
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
 }
+
+.CompletedSet-content:hover {
+  background-color: coral;
+  padding-top: 0.2rem;
+  font-size: large;
+}

@@ -27,7 +27,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 150px;
+    height: 162px;
     width: 130px;
     background-color: #cc0025;
     border-radius: 3px;
@@ -40,11 +40,11 @@
 .ScoreList-data {
     font-family: 'Annie Use Your Telescope',
         cursive;
-    font-size: 85%;
+    font-size: 88%;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     /* color: rgb(245, 229, 229); */
-    letter-spacing: .5px;
+    letter-spacing: .7px;
     text-transform: uppercase;
 }
 
@@ -80,6 +80,14 @@ ul {
     font-family: "Special Elite", cursive;
     font-size: 120%;
 }
+
+.Score .scoreCount:hover {
+    color: rgb(27, 233, 164);
+    font-size: 140%;
+
+    cursor: default;
+}
+
 
 .center-me {
     justify-content: center;

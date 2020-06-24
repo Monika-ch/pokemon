@@ -71,10 +71,26 @@
   margin-left: 12px;
 }
 
+.PlayerMove:hover {
+  color: rgb(200, 103, 92);
+  text-decoration: underline;
+  padding-left: 20px;
+  transition: ease-in-out 500ms;
+  font-size: 22px;
+}
+
 #ComputerMoveDetail {
   color: darkred;
   font-family: "Handlee", cursive;
   font-size: 16px;
   margin-top: 5px;
   margin-left: 20px;
+}
+
+#ComputerMoveDetail:hover {
+  color: rgb(99, 92, 200);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  transition: ease-in-out 500ms;
 }

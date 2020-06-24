@@ -5,7 +5,7 @@ import Flip from "react-reveal/Flip";
 class Pokedex extends Component {
   render() {
     return (
-      <Flip bottom cascade duration={1600}>
+      <Flip bottom cascade duration={1600} delay={2000}>
         <div className="Pokedex">
           {/* {title} */}
           {/* {playerName} */}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/Pokecard.css";
+import Flip from "react-reveal/Flip";
 
 // const POKE_API =
 //   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -10,6 +11,7 @@ let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
 class Pokecard extends Component {
   constructor(props) {
     super(props);
+    // this.state = { animate: false };
   }
 
   render() {
@@ -28,17 +30,21 @@ class Pokecard extends Component {
     }
 
     return (
-      <div
-        className="Pokecard"
-        onClick={() => this.props.onClick(this.props.id)}
-      >
-        <h6 className="Pokecard-title">{name}</h6>
-        <div className="Pokecard-image">
-          <img src={imgSrc} alt={this.props.name} width={width} />
+      // <div className={this.state.animate ? " animate" : ""}>
+      <Flip bottom cascade duration={1600}>
+        <div
+          className="Pokecard"
+          onClick={() => this.props.onClick(this.props.id)}
+        >
+          <h6 className="Pokecard-title">{name}</h6>
+          <div className="Pokecard-image">
+            <img src={imgSrc} alt={this.props.name} width={width} />
+          </div>
+          <div className="Pokecard-data">Type: {type}</div>
+          <div className="Pokecard-data">EXP: {exp}</div>
         </div>
-        <div className="Pokecard-data">Type: {type}</div>
-        <div className="Pokecard-data">EXP: {exp}</div>
-      </div>
+        {/* // </div> */}
+      </Flip>
     );
   }
 }
