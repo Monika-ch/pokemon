@@ -15,12 +15,15 @@ function FriendGame(props) {
         <div className="container card-coming-soon">
           <div className="row justify-content-center">
             <div className="col-8">
-              <h4>. . GAME RULES . .</h4>
-              <h6>Excited to know the rules of POKE-BATTLE ?</h6>
+              <h4>•◦•●✿ GAME RULES ✿●•◦•</h4>
               <p>
-                No worries ! You will soon get the updates, the work is still in
-                progress !!
+                Collect 4 sets of different types of pokemon, where 1 set = 3
+                cards !
               </p>
+              <p> or SCORE ➤ 2000 ! </p>
+              <h6>
+                <small>*Press 'r' for rules when in the game !</small>
+              </h6>
             </div>
           </div>
         </div>

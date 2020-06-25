@@ -6,7 +6,6 @@ import CardDeck from "./CardDeck";
 import PokeModal from "./PokeModal";
 import { Redirect } from "react-router-dom";
 import ScoreList from "./ScoreList";
-import "../css/Pokedex.css";
 import LoadingOverlay from "react-loading-overlay";
 import { SemipolarLoading } from "react-loadingg";
 import { Button } from "reactstrap";
@@ -15,14 +14,13 @@ import { Prompt } from "react-router";
 import { connect } from "react-redux";
 import Roll from "react-reveal/Roll";
 import Fade from "react-reveal/Fade";
-import { hasData } from "jquery";
-import ThreeHorseLoading from "react-loadingg/lib/ThreeHorseLoading";
+import "../css/Pokedex.css";
 
 // CONSTANTS DEFINED HERE
-const timeForComputerMove = 1200;
-const pointsToWinGame = 3000;
-const completedSetCountToWinGame = 5;
-const cardCoundNeededToCompleteSet = 4;
+const timeForComputerMove = 1000;
+const pointsToWinGame = 2200;
+const completedSetCountToWinGame = 4;
+const cardCoundNeededToCompleteSet = 3;
 const maxCardInDeck = 7;
 
 function getRandom(arr, n) {
@@ -193,8 +191,8 @@ class Pokegame extends Component {
     } while (true);
   }
 
-  // Winning by set = 3 sets of 3 card each
-  // Winning by exp == pointsToWinGame points
+  // Winning by set === 4 sets of 3 cards each
+  // Winning by exp === pointsToWinGame points
   isAWinningHand(hand, completedSet) {
     const ifWinningBySet =
       completedSet.length ===
@@ -335,8 +333,8 @@ class Pokegame extends Component {
       this.setState({
         modalState: {
           isModalOpen: true,
-          modalTitle: "Game Rules",
-          modalContent: `Objective : Collect ${completedSetCountToWinGame} sets (1 set = ${cardCoundNeededToCompleteSet} cards) different types of pokemon or score >
+          modalTitle: "●✿ GAME RULES ✿●",
+          modalContent: `Collect ${completedSetCountToWinGame} sets of different types of pokemon, 1 set = ${cardCoundNeededToCompleteSet} cards "OR" Score ➤
             ${pointsToWinGame}`,
           modalButton1: "Cool",
           modalButton2: "Got it",

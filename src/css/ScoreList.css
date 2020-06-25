@@ -6,7 +6,7 @@
     height: 250px;
     box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
     background: #b00020;
-    border-radius: 15px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
 
 .ScoreList-title {
     font-family: "Piedra", cursive;
-    margin: .7rem 0;
+    margin: .6rem 0;
     color: white;
     font-weight: 100;
     font-size: 1rem;
@@ -26,10 +26,10 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 162px;
-    width: 130px;
+    height: 165px;
+    width: 135px;
     background-color: #cc0025;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: .5rem;
     padding-top: 16px;
     border: 1px ridge rgba(0, 0, 0, 0.1);
@@ -82,10 +82,8 @@ ul {
 .Score .scoreCount:hover {
     color: rgb(27, 233, 164);
     font-size: 140%;
-
     cursor: default;
 }
-
 
 .center-me {
     justify-content: center;
