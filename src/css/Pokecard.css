@@ -17,7 +17,8 @@
 }
 
 .Pokecard:active {
-  width: 135px;
+  width: 150px;
+  border: 20px solid white;
 }
 
 .Pokecard-data {

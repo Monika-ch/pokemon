@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Route";
 
-const baseUrl = "/pokemon";
-
 class App extends Component {
   render() {
     // Adding baseName so that the website works with github.io
