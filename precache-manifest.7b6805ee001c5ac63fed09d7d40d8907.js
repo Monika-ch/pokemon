@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b0c254d89ede45ac9cf3fe95d8d0bf1",
+    "revision": "0715af2adce5076db4a81b56314cb069",
     "url": "/pokemon/index.html"
   },
   {
-    "revision": "e1cf6f6023b8d0349ae6",
+    "revision": "a1949825b8bfc5b0c73d",
     "url": "/pokemon/static/css/2.041fc6bb.chunk.css"
   },
   {
-    "revision": "589cc52a0ec29de0c26f",
+    "revision": "ee3955c4b0d208774a3c",
     "url": "/pokemon/static/css/main.c299d888.chunk.css"
   },
   {
-    "revision": "e1cf6f6023b8d0349ae6",
-    "url": "/pokemon/static/js/2.7a3c87aa.chunk.js"
+    "revision": "a1949825b8bfc5b0c73d",
+    "url": "/pokemon/static/js/2.ca25b327.chunk.js"
   },
   {
     "revision": "1eeead50f760a1697f50d72b71cd0f35",
-    "url": "/pokemon/static/js/2.7a3c87aa.chunk.js.LICENSE.txt"
+    "url": "/pokemon/static/js/2.ca25b327.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "589cc52a0ec29de0c26f",
-    "url": "/pokemon/static/js/main.562e5011.chunk.js"
+    "revision": "ee3955c4b0d208774a3c",
+    "url": "/pokemon/static/js/main.1f657201.chunk.js"
   },
   {
     "revision": "e1366ef5cfb767bc3a5a",
