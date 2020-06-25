@@ -15,6 +15,8 @@ import { Prompt } from "react-router";
 import { connect } from "react-redux";
 import Roll from "react-reveal/Roll";
 import Fade from "react-reveal/Fade";
+import { hasData } from "jquery";
+import ThreeHorseLoading from "react-loadingg/lib/ThreeHorseLoading";
 
 // CONSTANTS DEFINED HERE
 const timeForComputerMove = 1200;
@@ -175,8 +177,20 @@ class Pokegame extends Component {
   }
 
   getCardFromDeck(hand) {
-    let newCard = this.getNRandomPokemon(1)[0];
-    return hand.concat(newCard);
+    let cntr = 0;
+    do {
+      let newCard = this.getNRandomPokemon(1)[0];
+      if (hand.some((x) => x.id === newCard.id)) {
+        // found a duplicate card. Keep trying
+        ++cntr;
+        if (cntr > 100) {
+          // give up and return the same card
+          return newCard;
+        }
+        continue;
+      }
+      return hand.concat(newCard);
+    } while (true);
   }
 
   // Winning by set = 3 sets of 3 card each
