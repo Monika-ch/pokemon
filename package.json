@@ -57,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "install-peers": "^1.0.3"
   }
 }
