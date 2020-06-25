@@ -17,7 +17,6 @@ export default function Routes() {
         <Route path="/friendgame" component={FriendGame} />
         <Route path="/randomgame" component={RandomGame} />
         <Route path="/game_rules" component={GameRules} />
-        <Route path="/pokemon/:id" render={Main.pokemon} />
         <Route exact path="/" component={Home} />
       </Switch>
     </Provider>

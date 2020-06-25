@@ -16,6 +16,10 @@
   transition: all ease 500ms;
 }
 
+.Pokecard:active {
+  width: 135px;
+}
+
 .Pokecard-data {
   font-size: 80%;
   text-transform: capitalize;

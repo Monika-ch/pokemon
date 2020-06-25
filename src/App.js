@@ -9,7 +9,7 @@ class App extends Component {
     // Adding baseName so that the website works with github.io
     // see here:https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
     return (
-      <BrowserRouter basename={baseUrl}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="outermost-wrapper">
           <div className="App">
             <Routes />

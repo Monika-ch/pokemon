@@ -134,7 +134,7 @@ class Pokegame extends Component {
       computerHand.push(randPokemon);
     }
 
-    let shouldRedirect = false;
+    let shouldRedirect = !this.props.pokemon || !this.props.pokemon.length;
 
     // for first time this.state = is necessary.
     // its like using a variable for first time, let x is necessary.
@@ -612,7 +612,7 @@ class Pokegame extends Component {
         {/* Copied from this: https://stackoverflow.com/questions/43230194/how-to-use-redirect-in-the-new-react-router-dom-of-reactjs
           Redirect needs to be part of render function. It doesn't matter where it is put in html as we are moving away from this page
           Also read tutorial on conditional rendering: https://reactjs.org/docs/conditional-rendering.html*/}
-        {this.state.isRedirect && <Redirect to="/pokemon" />}
+        {this.state.isRedirect && <Redirect to="/" />}
       </div>
     );
   }
