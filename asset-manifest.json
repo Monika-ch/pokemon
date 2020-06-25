@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/pokemon/static/css/main.c299d888.chunk.css",
-    "main.js": "/pokemon/static/js/main.1f657201.chunk.js",
-    "main.js.map": "/pokemon/static/js/main.1f657201.chunk.js.map",
-    "runtime-main.js": "/pokemon/static/js/runtime-main.2bfe477e.js",
-    "runtime-main.js.map": "/pokemon/static/js/runtime-main.2bfe477e.js.map",
-    "static/css/2.041fc6bb.chunk.css": "/pokemon/static/css/2.041fc6bb.chunk.css",
-    "static/js/2.ca25b327.chunk.js": "/pokemon/static/js/2.ca25b327.chunk.js",
-    "static/js/2.ca25b327.chunk.js.map": "/pokemon/static/js/2.ca25b327.chunk.js.map",
+    "main.js": "/pokemon/static/js/main.0a4a8e2e.chunk.js",
+    "main.js.map": "/pokemon/static/js/main.0a4a8e2e.chunk.js.map",
+    "runtime-main.js": "/pokemon/static/js/runtime-main.89aedc36.js",
+    "runtime-main.js.map": "/pokemon/static/js/runtime-main.89aedc36.js.map",
+    "static/css/2.2ff75df7.chunk.css": "/pokemon/static/css/2.2ff75df7.chunk.css",
+    "static/js/2.49664c2e.chunk.js": "/pokemon/static/js/2.49664c2e.chunk.js",
+    "static/js/2.49664c2e.chunk.js.map": "/pokemon/static/js/2.49664c2e.chunk.js.map",
     "index.html": "/pokemon/index.html",
-    "precache-manifest.7b6805ee001c5ac63fed09d7d40d8907.js": "/pokemon/precache-manifest.7b6805ee001c5ac63fed09d7d40d8907.js",
+    "precache-manifest.1aee7c551eef12511e0b07a742afbd79.js": "/pokemon/precache-manifest.1aee7c551eef12511e0b07a742afbd79.js",
     "service-worker.js": "/pokemon/service-worker.js",
-    "static/css/2.041fc6bb.chunk.css.map": "/pokemon/static/css/2.041fc6bb.chunk.css.map",
+    "static/css/2.2ff75df7.chunk.css.map": "/pokemon/static/css/2.2ff75df7.chunk.css.map",
     "static/css/main.c299d888.chunk.css.map": "/pokemon/static/css/main.c299d888.chunk.css.map",
-    "static/js/2.ca25b327.chunk.js.LICENSE.txt": "/pokemon/static/js/2.ca25b327.chunk.js.LICENSE.txt",
+    "static/js/2.49664c2e.chunk.js.LICENSE.txt": "/pokemon/static/js/2.49664c2e.chunk.js.LICENSE.txt",
     "static/media/font-awesome.css": "/pokemon/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.2bfe477e.js",
-    "static/css/2.041fc6bb.chunk.css",
-    "static/js/2.ca25b327.chunk.js",
+    "static/js/runtime-main.89aedc36.js",
+    "static/css/2.2ff75df7.chunk.css",
+    "static/js/2.49664c2e.chunk.js",
     "static/css/main.c299d888.chunk.css",
-    "static/js/main.1f657201.chunk.js"
+    "static/js/main.0a4a8e2e.chunk.js"
   ]
 }
