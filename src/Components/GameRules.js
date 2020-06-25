@@ -20,7 +20,7 @@ function FriendGame(props) {
                 Collect 4 sets of different types of pokemon, where 1 set = 3
                 cards !
               </p>
-              <p> or SCORE ➤ 2000 ! </p>
+              <p> or SCORE ➤ 2200 ! </p>
               <h6>
                 <small>*Press 'r' for rules when in the game !</small>
               </h6>
