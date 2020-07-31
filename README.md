@@ -1,4 +1,4 @@
-This project **POKEMON** was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project [**POKEMON**](https://monika-ch.github.io/pokemon) was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 ## Game objective
@@ -25,16 +25,17 @@ This project **POKEMON** was bootstrapped with [Create React App](https://github
  -  Pokemon is based on React.
  -  Functional components hold logic and functionality of the game.
  -  Presentational components control the configs of the game.
- -  API fetch from Rest API(https://pokeapi.co/api/v2/pokemon/) works at the background of the home page load.
+ -  API fetch from [Rest API](https://pokeapi.co/api/v2/pokemon/) works at the background of the home page load.
  -  Redux is used to store data obtained from API fetch.
  
  
 ## Deployed Pokemon Game
-   Do check out my Pokemon(https://monika-ch.github.io/pokemon) game. Play now, to win the battle against your opponent. If you like my
+   Do check out my [Pokemon](https://monika-ch.github.io/pokemon) game. Play now, to win the battle against your opponent. If you like my
    game, dont forget to star it and give it reviews.
    
 
-![Image of Pokegame Home Page](https://Monika-ch.github.com/public/pokegame.png)
+   ![Image of Pokemon Home Page](https://pokemon/public/pokehome.png)
+   ![Image of Pokemon Game Page](https://pokemon/public/pokegame.png)
 
  ### Credits:
  
