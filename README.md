@@ -34,8 +34,8 @@ This project [**POKEMON**](https://monika-ch.github.io/pokemon) was bootstrapped
    game, dont forget to star it and give it reviews.
    
 
-   ![Image of Pokemon Home Page](https://Monika-ch/pokemon/public/pokehome.png)
-   ![Image of Pokemon Game Page](https://Monika-ch/pokemon/pokemon/public/pokegame.png)
+   ![Image of Pokemon Home Page](https://github.com/Monika-ch/pokemon/blob/master/public/pokehome.png)
+   ![Image of Pokemon Game Page](https://github.com/Monika-ch/pokemon/blob/master/public/pokegame.png)
 
  ### Credits:
  
