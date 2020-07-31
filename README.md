@@ -35,7 +35,10 @@ This project [**POKEMON**](https://monika-ch.github.io/pokemon) was bootstrapped
    
 
    ![Image of Pokemon Home Page](https://github.com/Monika-ch/pokemon/blob/master/public/pokehome.png)
+   
+   
    ![Image of Pokemon Game Page](https://github.com/Monika-ch/pokemon/blob/master/public/pokegame.png)
+
 
  ### Credits:
  
